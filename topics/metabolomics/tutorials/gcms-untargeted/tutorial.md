@@ -26,6 +26,10 @@ contributors:
 
 GC-MS untargetted analysis based on RECETOX-adapted tools
 
+This is a training walking through the RECETOX GC prototype workflow. It runs on the Seminal plasma dilution series training dataset available in the RECETOX [data library](https://umsa.cerit-sc.cz/libraries/folders/F7f9c6096b8fa4528/page/1). The dilution series dataset consists of...
+
+During the tutorial we will perform initial peak detection and feature grouping after retention time-alignment across the samples, deconvolute those peaks into complete spectra, assigns retention indices and finally matches those spectra against the reference library.
+
 > ### Agenda
 >
 > In this tutorial, we will cover:
@@ -34,3 +38,86 @@ GC-MS untargetted analysis based on RECETOX-adapted tools
 > {:toc}
 >
 {: .agenda}
+
+# Importing training data into Galaxy
+
+## The main GC/MS dataset
+The main data input is a collection of sample data in the .mzML format, converted from the .RAW format by the `ThermoRawFileConverter` tool. The samples should be in profile mode (so no centroiding during conversion) which improves the actual peak detection and distinguishing peaks from noise over centroided data.
+
+The training dataset is in the UMSA Galaxy Data Library available [here](https://umsa.cerit-sc.cz/libraries/folders/F7f9c6096b8fa4528/page/1)
+
+> ### {% icon hands_on %} Hands-on: Import the data
+> 1. Create a new history for this tutorial and give it a proper name
+>
+>    {% snippet faqs/galaxy/histories_create_new.md %}
+>    {% snippet faqs/galaxy/histories_rename.md %}
+>
+> 2. Import from data library:
+>    - We want to import the 9 `mzml` files from the data library `gc_training`.
+>
+>    {% snippet faqs/galaxy/datasets_import_from_data_library.md %}
+{: .hands_on}
+
+## Reference data
+There are two more reference dataset we are going to need: the `alkanes` and `spectral library`.
+
+The list of `alkanes` with retention time and carbon number or retention index is used to compute the retention index of the deconvoluted peaks. The alkanes should be measured ideally in the same batch as the input sample collection. The file is in the data library [here](https://umsa.cerit-sc.cz/library/list#folders/F1c84aa7fc4490e6d/datasets/4582c858b46c378e)
+
+The `reference spectral library` is used for identification via [matchms](https://github.com/matchms/matchms). The spectral library contains the recorded and annotated mass spectra of compounds which can be detected in the sample and confirmed via comparison with this library. We are going to use the RECETOX [in-house](https://www.recetox.muni.cz/sluzby/centralni-laboratore-recetox/laboratore-analyzy-biomarkeru/recetox-mass-spectrum-reference-library) library of metabolite standards. The file is available [here](https://umsa.cerit-sc.cz/library/list#folders/F1c84aa7fc4490e6d/datasets/b592e391ebe7cadd).
+
+# Peak Detection
+The first four steps in the workflow are to detect the peaks in the `.mzml` data using [recetox-apLCMS](https://github.com/RECETOX/recetox-aplcms). In contrast to XCMS, apLCMS can process profile mode data and fits a bi-Gaussian peak shape model to the data, resulting in better peak detection than XCMS. Drifts in retention time are also corrected in recetox-apLCMS, outputting an aligned feature table. The four tools we are going to use are:
+
+  1. extract features
+  1. adjust time
+  1. align features
+  1. recover weaker signals
+
+> ## {% icon hands_on %} RECETOX apLCMS - extract features
+> 1. Run the {% tool [extract features](recetox_aplcms_extract_features) %} tool with the following parameters:
+>   - *Input file*: `seminal_plasma_list` (the collection with .mzml files)
+>
+{: .hands_on}
+
+> ## {% icon hands_on %} RECETOX apLCMS - adjust time
+> 1. Run the {% tool [extract features](recetox_aplcms_adjust_time) %} tool with the following parameters:
+>   - *Input data*: `RECETOX apLCMS - extract features on collection...` (the collection with output of the extract feature step)
+>
+{: .hands_on}
+
+> ## {% icon hands_on %} RECETOX apLCMS - align features
+> 1. Run the {% tool [extract features](recetox_aplcms_align_features) %} tool with the following parameters:
+>   - *Input data collection*: `seminal_plasma_list` (the collection with .mzml files)
+>   - *Input corrected feature samples collection*: `RECETOX apLCMS - adjust time corrected_feature_tables on data...` (the collection with output of the adjust time step)
+>
+{: .hands_on}
+
+> ## {% icon hands_on %} RECETOX apLCMS - recover weaker signals
+> 1. Run the {% tool [extract features](recetox_aplcms_recover_weaker_signals) %} tool with the following parameters:
+>   - *Input data collection*: `seminal_plasma_list` (the collection with .mzml files)
+>   - *Input data*: `RECETOX apLCMS - extract features on collection...` (the collection with output of the extract feature step)
+>   - *Input corrected feature samples collection*: `RECETOX apLCMS - adjust time corrected_feature_tables on data...` (the collection with output of the adjust time step)
+>   - *Input tolerances*: 
+>   - *Input rt cross table*: 
+>   - *Input int cross table*: 
+
+{: .hands_on}
+
+
+# Peak Deconvolution
+The next step is deconvoluting the detected peaks in order to reconstruct the full spectra of the analysed compound. [RAMClustR](https://github.com/cbroeckl/RAMClustR) is used to group features based on correlations across samples in a hierarchy, focusing on consistency across samples.
+
+The deconvoluted features are outputted in the spectral library `.msp` format with unique identifiers and the list of peaks, as well as retention time values. The intensities of those respective features are also computed for each sample and stored in a tabular `.csv` file.
+
+# Retention Index Calculation
+We developed a new package [RIAssigner](https://github.com/RECETOX/RIAssigner) to compute retention indices for files in the .msp format using an indexed reference list in .csv or .msp format.
+
+The output follows the same format as the input, but with added retention index values. These will be used at a later stage to improve compound identification with an additional filtering step. Multiple computation methods (piecewise-linear & cubic spline) are supported.
+
+# Identification
+The deconvoluted spectra are annotated for identification by comparing them with a reference spectral library. This library contains spectra of standards measured on the same instrument for optimal comparability. The matchms package is used for spectral matching. The cosine score with a greedy peak pairing heuristic was used to compute the number of matching ions with a given tolerance and the cosine scores for the matched peaks.
+
+An in-depth description of the results is given in the outputs section.
+
+# Scores and Matches
+The output table contains the scores and number of matched ions of the deconvoluted spectra with the spectra in the reference library. The raw output is filtered to only contain the top matches (3 by default) and is then further filtered to contain only pairs with a score and number of matched ions larger than provided thresholds (0.65 & 3 by default). The columns are ordered as `query/reference/matches/score`.
