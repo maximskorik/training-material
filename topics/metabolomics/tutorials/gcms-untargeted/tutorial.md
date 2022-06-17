@@ -65,6 +65,21 @@ The list of `alkanes` with retention time and carbon number or retention index i
 
 The `reference spectral library` is used for identification via [matchms](https://github.com/matchms/matchms). The spectral library contains the recorded and annotated mass spectra of compounds which can be detected in the sample and confirmed via comparison with this library. We are going to use the RECETOX [in-house](https://www.recetox.muni.cz/sluzby/centralni-laboratore-recetox/laboratore-analyzy-biomarkeru/recetox-mass-spectrum-reference-library) library of metabolite standards. The file is available [here](https://umsa.cerit-sc.cz/library/list#folders/F1c84aa7fc4490e6d/datasets/b592e391ebe7cadd).
 
+## Getting an overview of your samples' chromatograms
+You may be interested in getting an overview of what your samples' chromatograms look like, for example to see if some of
+your samples have distinct overall characteristics, *e.g.* unexpected chromatographic peaks or huge overall intensity.
+
+> ### {% icon hands_on %} Hands-on: xcms plot chromatogram
+>
+> 1. Run {% tool [MSnbase readMSData](msnbase_readmsdata) %} with the following parameters:
+>    - *Files from your history containing your chromatograms*: `seminal_plasma_list` (the collection with .mzml files)
+>
+> 2. Run {% tool [xcms plot chromatogram](xcms_plot_chromatogram) %} with the following parameters:
+>    - *RData file*: `seminal_plasma_list.raw.RData` (the output of the readMSData step)
+{: .hands_on}
+
+This tool generates Base Peak Intensity Chromatograms (BPIs) and Total Ion Chromatograms (TICs).
+
 # Peak Detection
 The first four steps in the workflow are to detect the peaks in the `.mzml` data using [recetox-apLCMS](https://github.com/RECETOX/recetox-aplcms). In contrast to XCMS, apLCMS can process profile mode data and fits a bi-Gaussian peak shape model to the data, resulting in better peak detection than XCMS. Drifts in retention time are also corrected in recetox-apLCMS, outputting an aligned feature table. The four tools we are going to use are:
 
@@ -73,34 +88,30 @@ The first four steps in the workflow are to detect the peaks in the `.mzml` data
   1. align features
   1. recover weaker signals
 
-> ## {% icon hands_on %} RECETOX apLCMS - extract features
+> ### {% icon hands_on %} RECETOX apLCMS - extract features
 > 1. Run the {% tool [extract features](recetox_aplcms_extract_features) %} tool with the following parameters:
 >   - *Input file*: `seminal_plasma_list` (the collection with .mzml files)
->
 {: .hands_on}
 
-> ## {% icon hands_on %} RECETOX apLCMS - adjust time
-> 1. Run the {% tool [extract features](recetox_aplcms_adjust_time) %} tool with the following parameters:
+> ### {% icon hands_on %} RECETOX apLCMS - adjust time
+> 1. Run the {% tool [adjust time](recetox_aplcms_adjust_time) %} tool with the following parameters:
 >   - *Input data*: `RECETOX apLCMS - extract features on collection...` (the collection with output of the extract feature step)
->
 {: .hands_on}
 
-> ## {% icon hands_on %} RECETOX apLCMS - align features
-> 1. Run the {% tool [extract features](recetox_aplcms_align_features) %} tool with the following parameters:
+> ### {% icon hands_on %} RECETOX apLCMS - align features
+> 1. Run the {% tool [align features](recetox_aplcms_align_features) %} tool with the following parameters:
 >   - *Input data collection*: `seminal_plasma_list` (the collection with .mzml files)
 >   - *Input corrected feature samples collection*: `RECETOX apLCMS - adjust time corrected_feature_tables on data...` (the collection with output of the adjust time step)
->
 {: .hands_on}
 
-> ## {% icon hands_on %} RECETOX apLCMS - recover weaker signals
-> 1. Run the {% tool [extract features](recetox_aplcms_recover_weaker_signals) %} tool with the following parameters:
+> ### {% icon hands_on %} RECETOX apLCMS - recover weaker signals
+> 1. Run the {% tool [recover weaker signals](recetox_aplcms_recover_weaker_signals) %} tool with the following parameters:
 >   - *Input data collection*: `seminal_plasma_list` (the collection with .mzml files)
 >   - *Input data*: `RECETOX apLCMS - extract features on collection...` (the collection with output of the extract feature step)
 >   - *Input corrected feature samples collection*: `RECETOX apLCMS - adjust time corrected_feature_tables on data...` (the collection with output of the adjust time step)
 >   - *Input tolerances*: 
 >   - *Input rt cross table*: 
 >   - *Input int cross table*: 
-
 {: .hands_on}
 
 
@@ -108,6 +119,14 @@ The first four steps in the workflow are to detect the peaks in the `.mzml` data
 The next step is deconvoluting the detected peaks in order to reconstruct the full spectra of the analysed compound. [RAMClustR](https://github.com/cbroeckl/RAMClustR) is used to group features based on correlations across samples in a hierarchy, focusing on consistency across samples.
 
 The deconvoluted features are outputted in the spectral library `.msp` format with unique identifiers and the list of peaks, as well as retention time values. The intensities of those respective features are also computed for each sample and stored in a tabular `.csv` file.
+
+> ### {% icon hands_on %} RAMClustR
+> 1. Run the {% tool [apLCMS to RamClustR converter](aplcms_to_ramclustr_converter) %} tool with the following parameters:
+>   - *apLCMS Dataframe*: `RECETOX apLCMS - recover weaker signals recovered_feature_sample_table on...`
+> 2. Run the {% tool [RAMClustR](ramclustr) %} tool with the following parameters:
+>   - *Choose input format*: `CSV`
+>   - *Input CSV*: ` Feature-by-sample RECETOX apLCMS - recover weaker signals recovered_feature_sample_table on...`
+{: .hands_on}
 
 # Retention Index Calculation
 We developed a new package [RIAssigner](https://github.com/RECETOX/RIAssigner) to compute retention indices for files in the .msp format using an indexed reference list in .csv or .msp format.
@@ -121,3 +140,6 @@ An in-depth description of the results is given in the outputs section.
 
 # Scores and Matches
 The output table contains the scores and number of matched ions of the deconvoluted spectra with the spectra in the reference library. The raw output is filtered to only contain the top matches (3 by default) and is then further filtered to contain only pairs with a score and number of matched ions larger than provided thresholds (0.65 & 3 by default). The columns are ordered as `query/reference/matches/score`.
+
+# The full Workflow
+This whole training can be run as a single Galaxy workflow available [here](https://github.com/RECETOX/workflow-testing/tree/main/GC_MS_pipeline).
