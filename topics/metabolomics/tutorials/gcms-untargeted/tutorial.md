@@ -80,7 +80,7 @@ your samples have distinct overall characteristics, *e.g.* unexpected chromatogr
 
 This tool generates Base Peak Intensity Chromatograms (BPIs) and Total Ion Chromatograms (TICs).
 
-# Peak Detection
+## Peak Detection
 The first four steps in the workflow are to detect the peaks in the `.mzml` data using [recetox-apLCMS](https://github.com/RECETOX/recetox-aplcms). In contrast to XCMS, apLCMS can process profile mode data and fits a bi-Gaussian peak shape model to the data, resulting in better peak detection than XCMS. Drifts in retention time are also corrected in recetox-apLCMS, outputting an aligned feature table. The four tools we are going to use are:
 
   1. extract features
@@ -88,57 +88,90 @@ The first four steps in the workflow are to detect the peaks in the `.mzml` data
   1. align features
   1. recover weaker signals
 
-> ### {% icon hands_on %} RECETOX apLCMS - extract features
-> 1. Run the {% tool [extract features](recetox_aplcms_extract_features) %} tool with the following parameters:
+> ### {% icon hands_on %} Extract Features
+> 1. Run the {% tool [RECETOX apLCMS - extract features](recetox_aplcms_extract_features) %} tool with the following parameters:
 >   - *Input file*: `seminal_plasma_list` (the collection with .mzml files)
+>   - *min_pres*: `0.5`
+>   - *min_run*: `12.0`
+>   - *mz_tol*: `1e-05`
+>   - *baseline_correct*: `0.0`
+>   - *baseline_correct_noise_percentile*: `0.0`
+>   - *intensity_weighted*: `Yes`
+>   - *shape_model*: `bi-Gaussian`
+>   - *shape_model*: `bi-Gaussian`
 {: .hands_on}
 
-> ### {% icon hands_on %} RECETOX apLCMS - adjust time
-> 1. Run the {% tool [adjust time](recetox_aplcms_adjust_time) %} tool with the following parameters:
+> ### {% icon hands_on %} Adjust Time
+> 1. Run the {% tool [RECETOX apLCMS - adjust time](recetox_aplcms_adjust_time) %} tool with the following parameters:
 >   - *Input data*: `RECETOX apLCMS - extract features on collection...` (the collection with output of the extract feature step)
+>   - *mz_tol*: `1e-05`
+>   - *max_align_mz_diff*: `0.01`
 {: .hands_on}
 
-> ### {% icon hands_on %} RECETOX apLCMS - align features
-> 1. Run the {% tool [align features](recetox_aplcms_align_features) %} tool with the following parameters:
+> ### {% icon hands_on %} Align Features
+> 1. Run the {% tool [RECETOX apLCMS - align features](recetox_aplcms_align_features) %} tool with the following parameters:
 >   - *Input data collection*: `seminal_plasma_list` (the collection with .mzml files)
 >   - *Input corrected feature samples collection*: `RECETOX apLCMS - adjust time corrected_feature_tables on data...` (the collection with output of the adjust time step)
+>   - *min_exp*: `2`
+>   - *mz_tol*: `1e-05`
+>   - *max_align_mz_diff*: `0.01`
 {: .hands_on}
 
-> ### {% icon hands_on %} RECETOX apLCMS - recover weaker signals
-> 1. Run the {% tool [recover weaker signals](recetox_aplcms_recover_weaker_signals) %} tool with the following parameters:
+> ### {% icon hands_on %} Recover Weaker Signals
+> 1. Run the {% tool [RECETOX apLCMS - recover weaker signals](recetox_aplcms_recover_weaker_signals) %} tool with the following parameters:
 >   - *Input data collection*: `seminal_plasma_list` (the collection with .mzml files)
 >   - *Input data*: `RECETOX apLCMS - extract features on collection...` (the collection with output of the extract feature step)
 >   - *Input corrected feature samples collection*: `RECETOX apLCMS - adjust time corrected_feature_tables on data...` (the collection with output of the adjust time step)
->   - *Input tolerances*: 
->   - *Input rt cross table*: 
->   - *Input int cross table*: 
+>   - *Input tolerances*: `RECETOX apLCMS - align features on data 45, data 44, and others (tolerances)`
+>   - *Input rt cross table*: `RECETOX apLCMS - align features on data 45, data 44, and others (rt cross table)`
+>   - *Input int cross table*: `RECETOX apLCMS - align features on data 45, data 44, and others (int cross table)`
+>   - *mz_tol*: `1e-05`
+>   - *use_observed_range*: `Yes`
+>   - *recover_min_count*: `3`
 {: .hands_on}
 
-
-# Peak Deconvolution
+## Peak Deconvolution
 The next step is deconvoluting the detected peaks in order to reconstruct the full spectra of the analysed compound. [RAMClustR](https://github.com/cbroeckl/RAMClustR) is used to group features based on correlations across samples in a hierarchy, focusing on consistency across samples.
 
-The deconvoluted features are outputted in the spectral library `.msp` format with unique identifiers and the list of peaks, as well as retention time values. The intensities of those respective features are also computed for each sample and stored in a tabular `.csv` file.
+> ### {% icon hands_on %} Data conversion
+> Since the apLCMS and RamClustR use different data formats we will run a tool to convert our output from the previous step to format RamClustR takes as input.
+> 1. Run the {% tool [apLCMS to RamClustR converter](aplcms_to_ramclustr_converter) %} tool with the following parameters:
+>   - *apLCMS Dataframe*: `RECETOX apLCMS - recover weaker signals recovered_feature_sample_table on...` 
+{: .hands_on}
 
 > ### {% icon hands_on %} RAMClustR
-> 1. Run the {% tool [apLCMS to RamClustR converter](aplcms_to_ramclustr_converter) %} tool with the following parameters:
->   - *apLCMS Dataframe*: `RECETOX apLCMS - recover weaker signals recovered_feature_sample_table on...`
 > 2. Run the {% tool [RAMClustR](ramclustr) %} tool with the following parameters:
 >   - *Choose input format*: `CSV`
 >   - *Input CSV*: ` Feature-by-sample RECETOX apLCMS - recover weaker signals recovered_feature_sample_table on...`
 {: .hands_on}
 
-# Retention Index Calculation
+The deconvoluted features are outputted in the spectral library `.msp` format with unique identifiers and the list of peaks, as well as retention time values. The intensities of those respective features are also computed for each sample and stored in a tabular `.csv` file.
+
+## Retention Index Calculation
 We developed a new package [RIAssigner](https://github.com/RECETOX/RIAssigner) to compute retention indices for files in the .msp format using an indexed reference list in .csv or .msp format.
+
+> ### {% icon hands_on %} RIAssigner
+> 2. Run the {% tool [RIAssigner](riassigner) %} tool with the following parameters:
+>   - *Query compound list*: `Mass spectra from RAMClustR on...` (one of the outputs of the previous step)
+>   - *query_rt_units*: `seconds`
+>   - *Reference compound list*: `SeminalPlasmaALKANES_KC_batch_1.csv` from the [data library](https://umsa.cerit-sc.cz/library/list#folders/F1c84aa7fc4490e6d/datasets/4582c858b46c378e)
+>   - *reference_rt_units*: `minutes`
+{: .hands_on}
 
 The output follows the same format as the input, but with added retention index values. These will be used at a later stage to improve compound identification with an additional filtering step. Multiple computation methods (piecewise-linear & cubic spline) are supported.
 
-# Identification
+## Identification
 The deconvoluted spectra are annotated for identification by comparing them with a reference spectral library. This library contains spectra of standards measured on the same instrument for optimal comparability. The matchms package is used for spectral matching. The cosine score with a greedy peak pairing heuristic was used to compute the number of matching ions with a given tolerance and the cosine scores for the matched peaks.
 
-An in-depth description of the results is given in the outputs section.
 
-# Scores and Matches
+> ### {% icon hands_on %}  matchMS similarity 
+> 2. Run the {% tool [ matchMS similarity ](matchms) %} tool with the following parameters:
+>   - *Queries spectra*: `RI using kovats of Mass spectra from RAMClustR on...` this is the output of the RIAssigner from the previous step
+>   - *Reference spectra*: `rcx_gc-orbitrap_metabolites_20210817.msp` from the [data library](https://umsa.cerit-sc.cz/library/list#folders/F1c84aa7fc4490e6d/datasets/b592e391ebe7cadd)
+>   - *Similarity metric*: `CosineHungarian`
+{: .hands_on}
+
+## Scores and Matches
 The output table contains the scores and number of matched ions of the deconvoluted spectra with the spectra in the reference library. The raw output is filtered to only contain the top matches (3 by default) and is then further filtered to contain only pairs with a score and number of matched ions larger than provided thresholds (0.65 & 3 by default). The columns are ordered as `query/reference/matches/score`.
 
 # The full Workflow
