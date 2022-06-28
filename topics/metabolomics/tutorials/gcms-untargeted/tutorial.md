@@ -175,4 +175,4 @@ The deconvoluted spectra are annotated for identification by comparing them with
 The output table contains the scores and number of matched ions of the deconvoluted spectra with the spectra in the reference library. The raw output is filtered to only contain the top matches (3 by default) and is then further filtered to contain only pairs with a score and number of matched ions larger than provided thresholds (0.65 & 3 by default). The columns are ordered as `query/reference/matches/score`.
 
 # The full Workflow
-This whole training can be run as a single Galaxy workflow available [here](https://github.com/RECETOX/workflow-testing/tree/main/GC_MS_pipeline).
+All steps within this training can be run as a single Galaxy workflow which is available as reference [here](https://github.com/RECETOX/workflow-testing/tree/main/gc-training-material).
