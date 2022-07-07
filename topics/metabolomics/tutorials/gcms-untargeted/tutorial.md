@@ -52,8 +52,9 @@ The training dataset is in the UMSA Galaxy Data Library available [here](https:/
 >    {% snippet faqs/galaxy/histories_create_new.md %}
 >    {% snippet faqs/galaxy/histories_rename.md %}
 >
-> 2. Import from data library:
->    - We want to import the 9 `mzml` files from the data library `gc_training`.
+> 2. Import the 9 `mzml` files into a collection
+>    - The Data Library with these files is called `gc_training`
+>    - Link to the library is [here](https://umsa.cerit-sc.cz/libraries/folders/F7f9c6096b8fa4528/page/1)
 >
 >    {% snippet faqs/galaxy/datasets_import_from_data_library.md %}
 {: .hands_on}
