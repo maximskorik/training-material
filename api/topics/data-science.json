@@ -204,7 +204,7 @@
           "github": false,
           "funder": true,
           "funding_id": "2020-1-NL01-KA203-064717",
-          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
+          "funding_statement": "This project (<a href=\"https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717\"><code class=\"language-plaintext highlighter-rouge\">2020-1-NL01-KA203-064717</code></a>) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src=\"https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg\" alt=\"eu flag with the text: with the support of the erasmus programme of the european union\" />",
           "id": "erasmusplus",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         },
@@ -212,7 +212,7 @@
           "name": "Avans Hogeschool",
           "joined": "2020-11",
           "funder": true,
-          "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. [avans.nl](https://avans.nl/)\n",
+          "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. <a href=\"https://avans.nl/\">avans.nl</a>",
           "id": "avans-atgm",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/avans-atgm.json"
         }
@@ -309,7 +309,7 @@
           "github": false,
           "funder": true,
           "funding_id": "2020-1-NL01-KA203-064717",
-          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
+          "funding_statement": "This project (<a href=\"https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717\"><code class=\"language-plaintext highlighter-rouge\">2020-1-NL01-KA203-064717</code></a>) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src=\"https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg\" alt=\"eu flag with the text: with the support of the erasmus programme of the european union\" />",
           "id": "erasmusplus",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         }
@@ -444,7 +444,7 @@
           "github": false,
           "funder": true,
           "funding_id": "2020-1-NL01-KA203-064717",
-          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
+          "funding_statement": "This project (<a href=\"https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717\"><code class=\"language-plaintext highlighter-rouge\">2020-1-NL01-KA203-064717</code></a>) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src=\"https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg\" alt=\"eu flag with the text: with the support of the erasmus programme of the european union\" />",
           "id": "erasmusplus",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         }
@@ -583,7 +583,7 @@
           "name": "Avans Hogeschool",
           "joined": "2020-11",
           "funder": true,
-          "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. [avans.nl](https://avans.nl/)\n",
+          "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. <a href=\"https://avans.nl/\">avans.nl</a>",
           "id": "avans-atgm",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/avans-atgm.json"
         }
@@ -811,7 +811,7 @@
           "github": false,
           "funder": true,
           "funding_id": "2020-1-NL01-KA203-064717",
-          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
+          "funding_statement": "This project (<a href=\"https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717\"><code class=\"language-plaintext highlighter-rouge\">2020-1-NL01-KA203-064717</code></a>) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src=\"https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg\" alt=\"eu flag with the text: with the support of the erasmus programme of the european union\" />",
           "id": "erasmusplus",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         },
@@ -819,7 +819,7 @@
           "name": "Avans Hogeschool",
           "joined": "2020-11",
           "funder": true,
-          "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. [avans.nl](https://avans.nl/)\n",
+          "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. <a href=\"https://avans.nl/\">avans.nl</a>",
           "id": "avans-atgm",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/avans-atgm.json"
         }
@@ -909,7 +909,7 @@
           "github": false,
           "funder": true,
           "funding_id": "2020-1-NL01-KA203-064717",
-          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
+          "funding_statement": "This project (<a href=\"https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717\"><code class=\"language-plaintext highlighter-rouge\">2020-1-NL01-KA203-064717</code></a>) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src=\"https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg\" alt=\"eu flag with the text: with the support of the erasmus programme of the european union\" />",
           "id": "erasmusplus",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         }
@@ -995,7 +995,7 @@
           "github": false,
           "funder": true,
           "funding_id": "2020-1-NL01-KA203-064717",
-          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
+          "funding_statement": "This project (<a href=\"https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717\"><code class=\"language-plaintext highlighter-rouge\">2020-1-NL01-KA203-064717</code></a>) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src=\"https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg\" alt=\"eu flag with the text: with the support of the erasmus programme of the european union\" />",
           "id": "erasmusplus",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         },
@@ -1003,7 +1003,7 @@
           "name": "Avans Hogeschool",
           "joined": "2020-11",
           "funder": true,
-          "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. [avans.nl](https://avans.nl/)\n",
+          "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. <a href=\"https://avans.nl/\">avans.nl</a>",
           "id": "avans-atgm",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/avans-atgm.json"
         }
@@ -1105,7 +1105,7 @@
           "github": false,
           "funder": true,
           "funding_id": "2020-1-NL01-KA203-064717",
-          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
+          "funding_statement": "This project (<a href=\"https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717\"><code class=\"language-plaintext highlighter-rouge\">2020-1-NL01-KA203-064717</code></a>) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src=\"https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg\" alt=\"eu flag with the text: with the support of the erasmus programme of the european union\" />",
           "id": "erasmusplus",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         }
@@ -1235,7 +1235,7 @@
           "name": "Avans Hogeschool",
           "joined": "2020-11",
           "funder": true,
-          "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. [avans.nl](https://avans.nl/)\n",
+          "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. <a href=\"https://avans.nl/\">avans.nl</a>",
           "id": "avans-atgm",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/avans-atgm.json"
         }
@@ -1354,7 +1354,7 @@
           "name": "Avans Hogeschool",
           "joined": "2020-11",
           "funder": true,
-          "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. [avans.nl](https://avans.nl/)\n",
+          "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. <a href=\"https://avans.nl/\">avans.nl</a>",
           "id": "avans-atgm",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/avans-atgm.json"
         }
@@ -1451,7 +1451,7 @@
           "github": false,
           "funder": true,
           "funding_id": "2020-1-NL01-KA203-064717",
-          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
+          "funding_statement": "This project (<a href=\"https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717\"><code class=\"language-plaintext highlighter-rouge\">2020-1-NL01-KA203-064717</code></a>) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src=\"https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg\" alt=\"eu flag with the text: with the support of the erasmus programme of the european union\" />",
           "id": "erasmusplus",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         }
@@ -1724,7 +1724,7 @@
       "notebook": {
         "language": "python"
       },
-      "last_modified_at": "25-Apr-22",
+      "last_modified_at": "28-Jun-22",
       "url": "/topics/data-science/tutorials/python-files/tutorial.html",
       "topic_name": "data-science",
       "tutorial_name": "python-files",
@@ -2681,7 +2681,7 @@
           "github": false,
           "funder": true,
           "funding_id": "2020-1-NL01-KA203-064717",
-          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
+          "funding_statement": "This project (<a href=\"https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717\"><code class=\"language-plaintext highlighter-rouge\">2020-1-NL01-KA203-064717</code></a>) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src=\"https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg\" alt=\"eu flag with the text: with the support of the erasmus programme of the european union\" />",
           "id": "erasmusplus",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         }
@@ -2749,7 +2749,7 @@
           "github": false,
           "funder": true,
           "funding_id": "2020-1-NL01-KA203-064717",
-          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
+          "funding_statement": "This project (<a href=\"https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717\"><code class=\"language-plaintext highlighter-rouge\">2020-1-NL01-KA203-064717</code></a>) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src=\"https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg\" alt=\"eu flag with the text: with the support of the erasmus programme of the european union\" />",
           "id": "erasmusplus",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         },
@@ -2757,7 +2757,7 @@
           "name": "Avans Hogeschool",
           "joined": "2020-11",
           "funder": true,
-          "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. [avans.nl](https://avans.nl/)\n",
+          "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. <a href=\"https://avans.nl/\">avans.nl</a>",
           "id": "avans-atgm",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/avans-atgm.json"
         }
@@ -2847,7 +2847,7 @@
           "name": "Avans Hogeschool",
           "joined": "2020-11",
           "funder": true,
-          "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. [avans.nl](https://avans.nl/)\n",
+          "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. <a href=\"https://avans.nl/\">avans.nl</a>",
           "id": "avans-atgm",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/avans-atgm.json"
         }
@@ -2950,7 +2950,7 @@
           "name": "Avans Hogeschool",
           "joined": "2020-11",
           "funder": true,
-          "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. [avans.nl](https://avans.nl/)\n",
+          "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. <a href=\"https://avans.nl/\">avans.nl</a>",
           "id": "avans-atgm",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/avans-atgm.json"
         }
@@ -2987,6 +2987,250 @@
       "urls": {
         "hands_on": "https://training.galaxyproject.org/training-material/api/topics//data-science/tutorials/sql-r/tutorial.json",
         "slides": "https://training.galaxyproject.org/training-material/api/topics//data-science/tutorials/sql-r/tutorial.json"
+      }
+    },
+    {
+      "layout": "tutorial_hands_on",
+      "title": "Variant Calling Workflow",
+      "questions": [
+        "How do I find sequence variants between my sample and a reference genome?"
+      ],
+      "objectives": [
+        "Understand the steps involved in variant calling.",
+        "Describe the types of data formats encountered during variant calling.",
+        "Use command line tools to perform variant calling."
+      ],
+      "time_estimation": "50M",
+      "key_points": [
+        "Bioinformatic command line tools are collections of commands that can be used to carry out bioinformatic analyses.",
+        "To use most powerful bioinformatic tools, you will need to use the command line.",
+        "There are many different file formats for storing genomics data. It is important to understand what type of information is contained in each file, and how it was derived."
+      ],
+      "contributors": [
+        {
+          "name": "Sofoklis Keisaris",
+          "email": "sofoskeisaris@gmail.com",
+          "orcid": "0000-0002-4833-4726",
+          "joined": "2022-05",
+          "id": "Sofokli5",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/Sofokli5.json"
+        },
+        {
+          "name": "Fotis E. Psomopoulos",
+          "email": "fpsom@certh.gr",
+          "twitter": "fopsom",
+          "gitter": "fpsom",
+          "orcid": "0000-0002-0222-4273",
+          "linkedin": "fpsom",
+          "joined": "2019-03",
+          "elixir_node": "gr",
+          "id": "fpsom",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/fpsom.json"
+        },
+        {
+          "name": "Saskia Hiltemann",
+          "maintainer_contact": "gitter",
+          "email": "saskia.hiltemann@gmail.com",
+          "twitter": "shiltemann",
+          "linkedin": "shiltemann",
+          "gitter": "shiltemann",
+          "orcid": "0000-0003-3803-468X",
+          "joined": "2017-09",
+          "bio": "Researcher at Erasmus Medical Center",
+          "elixir_node": "nl",
+          "id": "shiltemann",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/shiltemann.json"
+        },
+        {
+          "name": "Helena Rasche",
+          "email": "helena.rasche@gmail.com",
+          "orcid": "0000-0001-9760-8992",
+          "maintainer_contact": "gitter",
+          "gitter": "hexylena",
+          "joined": "2017-09",
+          "elixir_node": "nl",
+          "id": "hexylena",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json"
+        },
+        {
+          "name": "The Carpentries",
+          "joined": "2021-09",
+          "id": "carpentries",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/carpentries.json"
+        }
+      ],
+      "last_modified_at": "07-Jul-22",
+      "url": "/topics/data-science/tutorials/bash-variant-calling/tutorial.html",
+      "topic_name": "data-science",
+      "tutorial_name": "bash-variant-calling",
+      "hands_on": true,
+      "slides": false,
+      "tools": [
+
+      ],
+      "tours": false,
+      "video": false,
+      "translations": {
+        "tutorial": [
+
+        ],
+        "slides": [
+
+        ],
+        "video": false
+      },
+      "type": "tutorial",
+      "urls": {
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//data-science/tutorials/bash-variant-calling/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics//data-science/tutorials/bash-variant-calling/tutorial.json"
+      }
+    },
+    {
+      "layout": "tutorial_hands_on",
+      "title": "Version Control with Git",
+      "time_estimation": "65M",
+      "questions": [
+        "What is version control and why should I use it?",
+        "How do I get set up to use Git?",
+        "Where does Git store information?",
+        "How do I record changes in Git?",
+        "How do I check the status of my version control repository?",
+        "How do I record notes about what changes I made and why?",
+        "How can I identify old versions of files?",
+        "How do I review my changes?",
+        "How can I recover old versions of files?"
+      ],
+      "objectives": [
+        "Understand the benefits of an automated version control system.",
+        "Understand the basics of how automated version control systems work.",
+        "Configure `git` the first time it is used on a computer.",
+        "Understand the meaning of the `--global` configuration flag.",
+        "Create a local Git repository.",
+        "Describe the purpose of the `.git` directory.",
+        "Go through the modify-add-commit cycle for one or more files.",
+        "Explain where information is stored at each stage of that cycle.",
+        "Distinguish between descriptive and non-descriptive commit messages.",
+        "Explain what the HEAD of a repository is and how to use it.",
+        "Identify and use Git commit numbers.",
+        "Compare various versions of tracked files.",
+        "Restore old versions of files."
+      ],
+      "key_points": [
+        "Version control is like an unlimited 'undo'.",
+        "Version control also allows many people to work in parallel.",
+        "Use `git config` with the `--global` option to configure a user name, email address, editor, and other preferences once per machine.",
+        "`git init` initializes a repository.",
+        "Git stores all of its repository data in the `.git` directory.",
+        "`git status` shows the status of a repository.",
+        "Files can be stored in a project's working directory (which users see), the staging area (where the next commit is being built up) and the local repository (where commits are permanently recorded).",
+        "`git add` puts files in the staging area.",
+        "`git commit` saves the staged content as a new commit in the local repository.",
+        "Write a commit message that accurately describes your changes.",
+        "`git diff` displays differences between commits.",
+        "`git checkout` recovers old versions of files."
+      ],
+      "contributions": {
+        "authorship": [
+          "Sofokli5"
+        ],
+        "editing": [
+          "fpsom",
+          "shiltemann",
+          "hexylena"
+        ],
+        "funding": [
+          "carpentries",
+          "erasmusplus"
+        ]
+      },
+      "last_modified_at": "06-Jul-22",
+      "url": "/topics/data-science/tutorials/bash-git/tutorial.html",
+      "topic_name": "data-science",
+      "tutorial_name": "bash-git",
+      "hands_on": true,
+      "slides": false,
+      "tools": [
+        "interactive_tool_rstudio"
+      ],
+      "tours": false,
+      "video": false,
+      "translations": {
+        "tutorial": [
+
+        ],
+        "slides": [
+
+        ],
+        "video": false
+      },
+      "type": "tutorial",
+      "contributors": [
+        {
+          "name": "Sofoklis Keisaris",
+          "email": "sofoskeisaris@gmail.com",
+          "orcid": "0000-0002-4833-4726",
+          "joined": "2022-05",
+          "id": "Sofokli5",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/Sofokli5.json"
+        },
+        {
+          "name": "Fotis E. Psomopoulos",
+          "email": "fpsom@certh.gr",
+          "twitter": "fopsom",
+          "gitter": "fpsom",
+          "orcid": "0000-0002-0222-4273",
+          "linkedin": "fpsom",
+          "joined": "2019-03",
+          "elixir_node": "gr",
+          "id": "fpsom",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/fpsom.json"
+        },
+        {
+          "name": "Saskia Hiltemann",
+          "maintainer_contact": "gitter",
+          "email": "saskia.hiltemann@gmail.com",
+          "twitter": "shiltemann",
+          "linkedin": "shiltemann",
+          "gitter": "shiltemann",
+          "orcid": "0000-0003-3803-468X",
+          "joined": "2017-09",
+          "bio": "Researcher at Erasmus Medical Center",
+          "elixir_node": "nl",
+          "id": "shiltemann",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/shiltemann.json"
+        },
+        {
+          "name": "Helena Rasche",
+          "email": "helena.rasche@gmail.com",
+          "orcid": "0000-0001-9760-8992",
+          "maintainer_contact": "gitter",
+          "gitter": "hexylena",
+          "joined": "2017-09",
+          "elixir_node": "nl",
+          "id": "hexylena",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json"
+        },
+        {
+          "name": "The Carpentries",
+          "joined": "2021-09",
+          "id": "carpentries",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/carpentries.json"
+        },
+        {
+          "name": "Erasmus+ Programme",
+          "joined": "2020-09",
+          "avatar": "https://www.erasmusplus.nl/assets/images/logo.png",
+          "github": false,
+          "funder": true,
+          "funding_id": "2020-1-NL01-KA203-064717",
+          "funding_statement": "This project (<a href=\"https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717\"><code class=\"language-plaintext highlighter-rouge\">2020-1-NL01-KA203-064717</code></a>) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src=\"https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg\" alt=\"eu flag with the text: with the support of the erasmus programme of the european union\" />",
+          "id": "erasmusplus",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
+        }
+      ],
+      "urls": {
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//data-science/tutorials/bash-git/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics//data-science/tutorials/bash-git/tutorial.json"
       }
     }
   ]

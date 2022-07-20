@@ -40,6 +40,8 @@
                                
                        
                                
+                       
+                               
 			{
 				"id": "introduction/tutorials/options-for-using-galaxy/slides",
 				"topic": "Introduction to Galaxy Analyses",
@@ -121,6 +123,8 @@
                                
                        
                                
+                       
+                               
 			{
 				"id": "admin/tutorials/ansible-galaxy/slides",
 				"topic": "Galaxy Server administration",
@@ -173,6 +177,8 @@
 				"title": "Gearing towards production"
 			},
 								
+                               
+                       
                                
                        
                                
@@ -461,6 +467,10 @@
                        
                                
                        
+                               
+                       
+                               
+                       
                
 					
                        
@@ -520,6 +530,8 @@
 				"title": "ToolFactory: Generating Tools From Simple Scripts"
 			},
 								
+                               
+                       
                                
                        
                
@@ -650,6 +662,8 @@
 				"title": "CRISPR screen analysis"
 			},
 								
+                               
+                       
                                
                        
                                
@@ -917,6 +931,8 @@
 					
                        
                        
+                       
+                               
                        
                                
                        

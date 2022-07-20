@@ -190,11 +190,11 @@
       "slides": false,
       "workflows": [
         {
-          "workflow": "subworkflow.ga",
+          "workflow": "main_workflow.ga",
           "tests": false
         },
         {
-          "workflow": "main_workflow.ga",
+          "workflow": "subworkflow.ga",
           "tests": false
         }
       ],
@@ -766,7 +766,7 @@
         }
       ],
       "subtopic": "manage",
-      "last_modified_at": "12-Mar-21",
+      "last_modified_at": "24-Jun-22",
       "url": "/topics/galaxy-interface/tutorials/name-tags/tutorial.html",
       "topic_name": "galaxy-interface",
       "tutorial_name": "name-tags",
@@ -862,7 +862,7 @@
           "github": false,
           "funder": true,
           "funding_id": "2020-1-NL01-KA203-064717",
-          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
+          "funding_statement": "This project (<a href=\"https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717\"><code class=\"language-plaintext highlighter-rouge\">2020-1-NL01-KA203-064717</code></a>) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src=\"https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg\" alt=\"eu flag with the text: with the support of the erasmus programme of the european union\" />",
           "id": "erasmusplus",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         }
@@ -937,6 +937,9 @@
           "name": "John Chilton",
           "email": "jmchilton@gmail.com",
           "joined": "2017-09",
+          "twitter": "jmchilton",
+          "gitter": "jmchilton",
+          "orcid": "0000-0002-6794-0756",
           "id": "jmchilton",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/jmchilton.json"
         },
@@ -1011,6 +1014,9 @@
           "name": "John Chilton",
           "email": "jmchilton@gmail.com",
           "joined": "2017-09",
+          "twitter": "jmchilton",
+          "gitter": "jmchilton",
+          "orcid": "0000-0002-6794-0756",
           "id": "jmchilton",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/jmchilton.json"
         },
@@ -1607,11 +1613,11 @@
       "slides": false,
       "workflows": [
         {
-          "workflow": "galaxy-101-everyone.ga",
+          "workflow": "workflow_reports_final_workflow.ga",
           "tests": false
         },
         {
-          "workflow": "workflow_reports_final_workflow.ga",
+          "workflow": "galaxy-101-everyone.ga",
           "tests": false
         }
       ],
@@ -1667,6 +1673,9 @@
           "name": "John Chilton",
           "email": "jmchilton@gmail.com",
           "joined": "2017-09",
+          "twitter": "jmchilton",
+          "gitter": "jmchilton",
+          "orcid": "0000-0002-6794-0756",
           "id": "jmchilton",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/jmchilton.json"
         },
@@ -1689,7 +1698,7 @@
           "github": false,
           "funder": true,
           "funding_id": "2020-1-NL01-KA203-064717",
-          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
+          "funding_statement": "This project (<a href=\"https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717\"><code class=\"language-plaintext highlighter-rouge\">2020-1-NL01-KA203-064717</code></a>) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src=\"https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg\" alt=\"eu flag with the text: with the support of the erasmus programme of the european union\" />",
           "id": "erasmusplus",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         }

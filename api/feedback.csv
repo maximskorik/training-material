@@ -1894,3 +1894,29 @@
 2735,5,,,,A short introduction to Galaxy,Introduction to Galaxy Analyses,2022-06,2022-06-15
 2736,5,,,,Formation of the Super-Structures on the Inactive X,Epigenetics,2022-06,2022-06-15
 2737,5,"Nice and understandable! I'm a software engineer tasked with setting up and administrating a Galaxy server, so I don't have a bioinformatics background. However, I was able to understand this tutorial and now know why Galaxy is such a powerful tool!",,,Galaxy 101 for everyone,Introduction to Galaxy Analyses,2022-06,2022-06-15
+2738,5,Ease of use,,,Galaxy 101 for everyone,Introduction to Galaxy Analyses,2022-06,2022-06-17
+2739,1,,it can be more better how do you get the end result was not clearly explained,,NGS data logistics,Introduction to Galaxy Analyses,2022-06,2022-06-18
+2740,5,,,,Introduction to Genomics and Galaxy,Introduction to Galaxy Analyses,2022-06,2022-06-20
+2741,3,,,,Quality Control,Sequence analysis,2022-06,2022-06-20
+2742,5,Well-detailed ,Alphadiversity,,16S Microbial Analysis with mothur (extended),Metagenomics,2022-06,2022-06-24
+2743,5,The clarity and flow of topics guidelines,so far so good,,16S Microbial Analysis with mothur (extended),Metagenomics,2022-06,2022-06-24
+2744,5,easy to follow & explained well,,,Quality Control,Sequence analysis,2022-06,2022-06-28
+2745,1,tree -l 2 was helpful as otherwise unclear which file goes where,"Current version of the tutorial is broken, consider rolling back to archive. Ansible errors very hard to troubleshoot - ideally add more tips where things can go wrong, for ex ansible vault seems to enter an unfixable state if you mess up the secret yml file and have to make it again",,Galaxy Installation with Ansible,Galaxy Server administration,2022-06,2022-06-29
+2746,5,,,,A short introduction to Galaxy,Introduction to Galaxy Analyses,2022-06,2022-06-29
+2747,5,"Very detailed, self explanatory",More examples maybe good,,Quality Control,Sequence analysis,2022-06,2022-06-29
+2748,5,learning how to use a workflow on a different dataset,,,Galaxy 101 for everyone,Introduction to Galaxy Analyses,2022-06,2022-06-30
+2749,1,most of the functionsare different what is given here,"please insert screen shorts of the results, how the output look like ",,An Introduction to Genome Assembly,Assembly,2022-06,2022-06-30
+2750,4,The way of presentation to make the tutorial easily understandable.,More numerical examples could be added.,,Deep Learning (Part 2) - Recurrent neural networks (RNN),Statistics and machine learning,2022-07,2022-07-01
+2751,4,The clear instructions on how to use the tools ,allowing learners to supply the solution and evaluating the answers,,M. tuberculosis Variant Analysis,Variant Analysis,2022-07,2022-07-02
+2752,2,It is a useful feature.,"The syntax of the ""Replace text"" tool is not explained. Thus, it is only useful with the data collection of the tutorial, but it does not teach how to aply it to other collections with different element identifiers. It would be great if it explained why the ""Find pattern"" and ""Replace with"" boxes are filled that way.",,Group tags for complex experimental designs,Using Galaxy and Managing your Data,2022-07,2022-07-05
+2754,5,Clear example of a great use case,What to do if pulling from an FTP server that requires credentials,,Rule Based Uploader,Using Galaxy and Managing your Data,2022-07,2022-07-08
+2755,5,Thorough guide with plenty of time for users to try. ,"To me it's simple enough to follow all the instructions, no improvement needed.",,A short introduction to Galaxy,Introduction to Galaxy Analyses,2022-07,2022-07-09
+2756,1,more detailed form example was not explained clearly,,,IGV Introduction,Introduction to Galaxy Analyses,2022-07,2022-07-09
+2757,4,it was information packed and tried to explain in details. ,"well , idk if i'm dumb but i couldn't find the gear icon to start the ctul tutorial. maybe the boxes in the instruction could be direct links instead?",,Quality Control,Sequence analysis,2022-07,2022-07-11
+2758,5,,,,A short introduction to Galaxy,Introduction to Galaxy Analyses,2022-07,2022-07-12
+2759,5,Easy to follow steps ,,,A short introduction to Galaxy,Introduction to Galaxy Analyses,2022-07,2022-07-14
+2760,5,,,,Galaxy 101,Introduction to Galaxy Analyses,2022-07,2022-07-19
+2761,4,The step by step guide and easy to operate,I facet some trouble with Database/Build section and I would like to info about them even it was not necessary for the analyse.,,Label-free data analysis using MaxQuant,Proteomics,2022-07,2022-07-19
+2762,5,It was easy to follow and very useful ,,,Reference-based RNA-Seq data analysis,Transcriptomics,2022-07,2022-07-19
+2763,5,clarity of each step,a short video can easy to complete this workflow and help peopless to learn it in much less time,,A short introduction to Galaxy,Introduction to Galaxy Analyses,2022-07,2022-07-20
+2764,5,,,,A short introduction to Galaxy,Introduction to Galaxy Analyses,2022-07,2022-07-20

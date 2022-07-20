@@ -300,11 +300,11 @@
       "slides": false,
       "workflows": [
         {
-          "workflow": "qc_report.ga",
+          "workflow": "rna-seq-reads-to-counts.ga",
           "tests": false
         },
         {
-          "workflow": "rna-seq-reads-to-counts.ga",
+          "workflow": "qc_report.ga",
           "tests": false
         }
       ],
@@ -1599,11 +1599,11 @@
       "slides": false,
       "workflows": [
         {
-          "workflow": "Pre-processing_with_Alevin_Steps_4-6.ga",
+          "workflow": "Pre-processing_with_Alevin_Steps_1-3.ga",
           "tests": false
         },
         {
-          "workflow": "Pre-processing_with_Alevin_Steps_1-3.ga",
+          "workflow": "Pre-processing_with_Alevin_Steps_4-6.ga",
           "tests": false
         }
       ],
@@ -2077,11 +2077,11 @@
       "slides": true,
       "workflows": [
         {
-          "workflow": "scrna_mp_celseq.ga",
+          "workflow": "scrna_pp_celseq.ga",
           "tests": false
         },
         {
-          "workflow": "scrna_pp_celseq.ga",
+          "workflow": "scrna_mp_celseq.ga",
           "tests": false
         }
       ],
@@ -2127,7 +2127,8 @@
         "rna-seq",
         "collections",
         "drosophila",
-        "QC"
+        "QC",
+        "cyoa"
       ],
       "level": "Introductory",
       "zenodo_link": "https://zenodo.org/record/4541751",
@@ -2249,7 +2250,7 @@
           "url": "https://training.galaxyproject.org/training-material/api/contributors/lldelisle.json"
         }
       ],
-      "last_modified_at": "09-May-22",
+      "last_modified_at": "07-Jun-22",
       "url": "/topics/transcriptomics/tutorials/ref-based/tutorial.html",
       "topic_name": "transcriptomics",
       "tutorial_name": "ref-based",
@@ -2257,12 +2258,12 @@
       "slides": false,
       "workflows": [
         {
-          "workflow": "deg-analysis.ga",
-          "tests": true
-        },
-        {
           "workflow": "qc-mapping-counting-paired-and-single.ga",
           "tests": false
+        },
+        {
+          "workflow": "deg-analysis.ga",
+          "tests": true
         },
         {
           "workflow": "qc-mapping-counting.ga",
@@ -2461,7 +2462,7 @@
           "github": false,
           "funder": true,
           "funding_id": "2020-1-NL01-KA203-064717",
-          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
+          "funding_statement": "This project (<a href=\"https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717\"><code class=\"language-plaintext highlighter-rouge\">2020-1-NL01-KA203-064717</code></a>) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src=\"https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg\" alt=\"eu flag with the text: with the support of the erasmus programme of the european union\" />",
           "id": "erasmusplus",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         }

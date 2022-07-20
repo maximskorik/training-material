@@ -871,6 +871,9 @@
     "name": "John Chilton",
     "email": "jmchilton@gmail.com",
     "joined": "2017-09",
+    "twitter": "jmchilton",
+    "gitter": "jmchilton",
+    "orcid": "0000-0002-6794-0756",
     "id": "jmchilton",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/jmchilton.json"
   },
@@ -973,7 +976,7 @@
     "url": "https://training.galaxyproject.org/training-material/api/contributors/Lain-inrae.json"
   },
   {
-    "name": "Love O'tudor",
+    "name": "Love O’tudor",
     "email": "loveotudor@gmail.com",
     "twitter": "lamouresparus",
     "joined": "2021-10",
@@ -1182,6 +1185,12 @@
     "url": "https://training.galaxyproject.org/training-material/api/contributors/millen2223.json"
   },
   {
+    "name": "Mira Kuntz",
+    "joined": "2022-07",
+    "id": "mira-miracoli",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/mira-miracoli.json"
+  },
+  {
     "name": "Cory Maughmer",
     "joined": "2018-06",
     "id": "moffmade",
@@ -1312,6 +1321,12 @@
     "elixir_node": "uk",
     "id": "nsoranzo",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/nsoranzo.json"
+  },
+  {
+    "name": "Nitesh Turaga",
+    "joined": "2017-09",
+    "id": "nturaga",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/nturaga.json"
   },
   {
     "name": "NU Knight Lab",
@@ -1589,6 +1604,14 @@
     "url": "https://training.galaxyproject.org/training-material/api/contributors/slugger70.json"
   },
   {
+    "name": "Sofoklis Keisaris",
+    "email": "sofoskeisaris@gmail.com",
+    "orcid": "0000-0002-4833-4726",
+    "joined": "2022-05",
+    "id": "Sofokli5",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/Sofokli5.json"
+  },
+  {
     "name": "Stéphanie Robin",
     "email": "stephanie.robin@inrae.fr",
     "twitter": "robinstphanie1",
@@ -1774,6 +1797,13 @@
     "url": "https://training.galaxyproject.org/training-material/api/contributors/vloux.json"
   },
   {
+    "name": "Julia Jakiela",
+    "email": "juliajot36@gmail.com",
+    "joined": "2022-06",
+    "id": "wee-snufkin",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/wee-snufkin.json"
+  },
+  {
     "name": "William Durand",
     "joined": "2017-09",
     "id": "willdurand",
@@ -1861,7 +1891,7 @@
     "github": false,
     "funder": true,
     "funding_id": "2020-1-NL01-KA203-064717",
-    "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
+    "funding_statement": "This project (<a href=\"https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717\"><code class=\"language-plaintext highlighter-rouge\">2020-1-NL01-KA203-064717</code></a>) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src=\"https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg\" alt=\"eu flag with the text: with the support of the erasmus programme of the european union\" />",
     "id": "erasmusplus",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
   },
@@ -1869,7 +1899,7 @@
     "name": "Avans Hogeschool",
     "joined": "2020-11",
     "funder": true,
-    "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. [avans.nl](https://avans.nl/)\n",
+    "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. <a href=\"https://avans.nl/\">avans.nl</a>",
     "id": "avans-atgm",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/avans-atgm.json"
   },
