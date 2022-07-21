@@ -518,6 +518,14 @@ hdashnow:
     name: Harriet Dashnow
     joined: 2018-09
 
+hechth:
+    name: Helge Hecht
+    joined: 2022-07
+    elixir_node: cz
+    orcid: 0000-0001-6744-996X
+    gitter: hechth
+    email: hechth.tum@gmail.com
+
 heylf:
     name: Florian Heyl
     joined: 2018-08

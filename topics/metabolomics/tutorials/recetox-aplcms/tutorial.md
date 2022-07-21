@@ -3,10 +3,14 @@ layout: tutorial_hands_on
 
 title: 'Mass Spectrometry: Peak detection in profile mode HRMS data with recetox-aplcms'
 zenodo_link: https://zenodo.org/record/6878356
-questions: null
-objectives: null
-time_estimation: ''
-key_points: null
+level: Intermediate
+questions: 
+- question one
+objectives:
+- first objective
+time_estimation: '1h'
+key_points:
+- first key point
 contributors:
 - hechth
 
