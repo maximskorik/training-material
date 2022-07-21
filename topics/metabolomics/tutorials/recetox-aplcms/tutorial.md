@@ -2,7 +2,7 @@
 layout: tutorial_hands_on
 
 title: 'Mass Spectrometry: Peak detection in profile mode HRMS data with recetox-aplcms'
-zenodo_link: null
+zenodo_link: https://zenodo.org/record/6878356
 questions: null
 objectives: null
 time_estimation: ''
@@ -86,17 +86,18 @@ have fun!
 >
 >    ***TODO***: *Remove the useless files (if added)*
 >
->    {% include snippets/import_via_link.md %}
->    {% include snippets/import_from_data_library.md %}
+>    {% snippet faqs/galaxy/datasets_import_via_link.md %}
+>
+>    {% snippet faqs/galaxy/datasets_import_from_data_library.md %}
 >
 > 3. Rename the datasets
 > 4. Check that the datatype
 >
->    {% include snippets/change_datatype.md datatype="datatypes" %}
+>    {% snippet faqs/galaxy/datasets_change_datatype.md datatype="datatypes" %}
 >
 > 5. Add to each database a tag corresponding to ...
 >
->    {% include snippets/add_tag.md %}
+>    {% snippet faqs/galaxy/datasets_add_tag.md %}
 >
 {: .hands_on}
 
@@ -120,12 +121,54 @@ The idea is to keep the theory description before quite simple to focus more on 
 A big step can have several subsections or sub steps:
 
 
+## Sub-step with **Thermo**
+
+> ### {% icon hands_on %} Hands-on: Task description
+>
+> 1. {% tool [Thermo](toolshed.g2.bx.psu.edu/repos/galaxyp/thermo_raw_file_converter/thermo_raw_file_converter/1.3.4+galaxy0) %} with the following parameters:
+>    - {% icon param-collection %} *"Thermo RAW file"*: `output` (Input dataset collection)
+>    - *"Output format"*: `mzml`
+>        - *"Use the peak picking provided by the native thermo library"*: `Yes`
+>    - *"Extract additional detector data"*: `Yes`
+>    - *"Include reference and exception data"*: `Yes`
+>    - *"Select MS levels "*: `1`
+>
+>    ***TODO***: *Check parameter descriptions*
+>
+>    ***TODO***: *Consider adding a comment or tip box*
+>
+>    > ### {% icon comment %} Comment
+>    >
+>    > A comment about the tool or something else. This box can also be in the main text
+>    {: .comment}
+>
+{: .hands_on}
+
+***TODO***: *Consider adding a question to test the learners understanding of the previous exercise*
+
+> ### {% icon question %} Questions
+>
+> 1. Question1?
+> 2. Question2?
+>
+> > ### {% icon solution %} Solution
+> >
+> > 1. Answer for question1
+> > 2. Answer for question2
+> >
+> {: .solution}
+>
+{: .question}
+
 ## Sub-step with **RECETOX apLCMS - extract features**
 
 > ### {% icon hands_on %} Hands-on: Task description
 >
 > 1. {% tool [RECETOX apLCMS - extract features](toolshed.g2.bx.psu.edu/repos/recetox/recetox_aplcms_extract_features/recetox_aplcms_extract_features/0.9.4+galaxy0) %} with the following parameters:
->    - {% icon param-collection %} *"Input file"*: `output` (Input dataset collection)
+>    - {% icon param-file %} *"Input file"*: `output` (output of **Thermo** {% icon tool %})
+>    - In *"Noise filtering and peak detection"*:
+>        - *"min_run"*: `4.0`
+>        - *"baseline_correct_noise_percentile"*: `0.001`
 >
 >    ***TODO***: *Check parameter descriptions*
 >
@@ -193,7 +236,9 @@ A big step can have several subsections or sub steps:
 > ### {% icon hands_on %} Hands-on: Task description
 >
 > 1. {% tool [RECETOX apLCMS - align features](toolshed.g2.bx.psu.edu/repos/recetox/recetox_aplcms_align_features/recetox_aplcms_align_features/0.9.4+galaxy1) %} with the following parameters:
+>    - {% icon param-file %} *"Input data collection"*: `output` (output of **Thermo** {% icon tool %})
 >    - {% icon param-file %} *"Input corrected feature samples collection"*: `corrected_feature_tables` (output of **RECETOX apLCMS - adjust time** {% icon tool %})
+>    - *"min_exp"*: `1`
 >
 >    ***TODO***: *Check parameter descriptions*
 >
@@ -227,6 +272,7 @@ A big step can have several subsections or sub steps:
 > ### {% icon hands_on %} Hands-on: Task description
 >
 > 1. {% tool [RECETOX apLCMS - recover weaker signals](toolshed.g2.bx.psu.edu/repos/recetox/recetox_aplcms_recover_weaker_signals/recetox_aplcms_recover_weaker_signals/0.9.4+galaxy1) %} with the following parameters:
+>    - {% icon param-file %} *"Input data collection"*: `output` (output of **Thermo** {% icon tool %})
 >    - {% icon param-file %} *"Input extracted feature samples collection"*: `feature_sample_table` (output of **RECETOX apLCMS - extract features** {% icon tool %})
 >    - {% icon param-file %} *"Input corrected feature samples collection"*: `corrected_feature_tables` (output of **RECETOX apLCMS - adjust time** {% icon tool %})
 >    - {% icon param-file %} *"Input tolerances"*: `tolerances` (output of **RECETOX apLCMS - align features** {% icon tool %})

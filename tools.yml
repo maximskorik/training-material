@@ -3,6 +3,12 @@ install_repository_dependencies: True
 install_resolver_dependencies: True
 
 tools:
+- name: thermo_raw_file_converter
+  owner: galaxyp
+  revisions:
+  - 19e45916daf9
+  tool_panel_section_label: Tools from workflows
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
 - name: recetox_aplcms_extract_features
   owner: recetox
   revisions:

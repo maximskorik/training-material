@@ -1,18 +1,24 @@
 {
     "a_galaxy_workflow": "true",
-    "annotation": "",
+    "annotation": "Peak detection using recetox-aplcms.",
+    "creator": [
+        {
+            "class": "Organization",
+            "name": "RECETOX"
+        }
+    ],
     "format-version": "0.1",
-    "name": "GTN recetox-aplcms",
+    "name": "GTN-recetox-aplcms",
     "steps": {
         "0": {
-            "annotation": "",
+            "annotation": "Upload HRMS profile mode data.",
             "content_id": null,
             "errors": null,
             "id": 0,
             "input_connections": {},
             "inputs": [
                 {
-                    "description": "",
+                    "description": "Upload HRMS profile mode data.",
                     "name": "Input Dataset Collection"
                 }
             ],
@@ -20,41 +26,101 @@
             "name": "Input dataset collection",
             "outputs": [],
             "position": {
-                "bottom": 457.7000045776367,
+                "bottom": 1.7000045776367188,
                 "height": 82.20000457763672,
-                "left": 251,
-                "right": 451,
-                "top": 375.5,
+                "left": -391.5,
+                "right": -191.5,
+                "top": -80.5,
                 "width": 200,
-                "x": 251,
-                "y": 375.5
+                "x": -391.5,
+                "y": -80.5
             },
             "tool_id": null,
-            "tool_state": "{\"optional\": false, \"collection_type\": \"list\"}",
+            "tool_state": "{\"optional\": false, \"format\": [\"thermo.raw\"], \"collection_type\": \"list\"}",
             "tool_version": null,
             "type": "data_collection_input",
-            "uuid": "1d816c17-d260-4cd9-9115-22ad5098abde",
+            "uuid": "62514ec7-1f10-46d6-b501-a0ee542d0b5d",
             "workflow_outputs": [
                 {
                     "label": null,
                     "output_name": "output",
-                    "uuid": "b55a22fd-6150-4271-9a53-0363bb438df3"
+                    "uuid": "4ac53cac-b48d-4f20-9ab8-5da506a0009c"
                 }
             ]
         },
         "1": {
-            "annotation": "",
-            "content_id": "toolshed.g2.bx.psu.edu/repos/recetox/recetox_aplcms_extract_features/recetox_aplcms_extract_features/0.9.4+galaxy0",
+            "annotation": "Extract MS1 scans from RAW data using ThermoRawFileConverter",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/thermo_raw_file_converter/thermo_raw_file_converter/1.3.4+galaxy0",
             "errors": null,
             "id": 1,
             "input_connections": {
-                "file": {
+                "input_file": {
                     "id": 0,
                     "output_name": "output"
                 }
             },
-            "inputs": [],
-            "label": null,
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Thermo",
+                    "name": "input_file"
+                }
+            ],
+            "label": "Convert to MZML",
+            "name": "Thermo",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "mzml"
+                }
+            ],
+            "position": {
+                "bottom": 33.099998474121094,
+                "height": 113.5999984741211,
+                "left": -113.5,
+                "right": 86.5,
+                "top": -80.5,
+                "width": 200,
+                "x": -113.5,
+                "y": -80.5
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/thermo_raw_file_converter/thermo_raw_file_converter/1.3.4+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "19e45916daf9",
+                "name": "thermo_raw_file_converter",
+                "owner": "galaxyp",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"allDetectors\": \"true\", \"format_cond\": {\"output_format\": \"1\", \"__current_case__\": 1, \"zlib_boolean\": \"true\", \"peakpicking_boolean\": \"false\"}, \"ignore_instrument_errors_boolean\": \"true\", \"includeExceptionData\": \"true\", \"input_file\": {\"__class__\": \"RuntimeValue\"}, \"msLevel\": \"1\", \"output_metadata_selector\": \"off\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.3.4+galaxy0",
+            "type": "tool",
+            "uuid": "537194fc-3d0d-4ab6-8bc9-647adc7be8d9",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "860afc10-431d-4978-b9f7-8ed9b53b7d54"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "Perform peak detection in MS1 data using recetox_aplcms_extract_features tool.",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/recetox/recetox_aplcms_extract_features/recetox_aplcms_extract_features/0.9.4+galaxy0",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "file": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool RECETOX apLCMS - extract features",
+                    "name": "file"
+                }
+            ],
+            "label": "Extract Features",
             "name": "RECETOX apLCMS - extract features",
             "outputs": [
                 {
@@ -63,14 +129,14 @@
                 }
             ],
             "position": {
-                "bottom": 529.9000091552734,
-                "height": 154.40000915527344,
-                "left": 691,
-                "right": 891,
-                "top": 375.5,
+                "bottom": 53.5,
+                "height": 134,
+                "left": 164.5,
+                "right": 364.5,
+                "top": -80.5,
                 "width": 200,
-                "x": 691,
-                "y": 375.5
+                "x": 164.5,
+                "y": -80.5
             },
             "post_job_actions": {},
             "tool_id": "toolshed.g2.bx.psu.edu/repos/recetox/recetox_aplcms_extract_features/recetox_aplcms_extract_features/0.9.4+galaxy0",
@@ -80,31 +146,36 @@
                 "owner": "recetox",
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             },
-            "tool_state": "{\"__input_ext\": \"mzml\", \"chromInfo\": \"/mnt/volume/shared/galaxy/var/tool-data/shared/ucsc/chrom/?.len\", \"feature_detection\": {\"shape_model\": \"bi-Gaussian\", \"BIC_factor\": \"2.0\", \"peak_estim_method\": \"moment\", \"min_bandwidth\": null, \"max_bandwidth\": null, \"sd_cut_min\": \"0.01\", \"sd_cut_max\": \"500.0\", \"sigma_ratio_lim_min\": \"0.01\", \"sigma_ratio_lim_max\": \"100.0\", \"component_eliminate\": \"0.01\", \"moment_power\": \"1.0\"}, \"file\": {\"__class__\": \"ConnectedValue\"}, \"file|__identifier__\": \"Tribrid_201001_006-QC2_1_POS_MU.raw\", \"noise_filtering\": {\"min_pres\": \"0.5\", \"min_run\": \"12.0\", \"mz_tol\": \"1e-05\", \"baseline_correct\": \"0.0\", \"baseline_correct_noise_percentile\": \"0.05\", \"intensity_weighted\": \"false\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_state": "{\"feature_detection\": {\"shape_model\": \"bi-Gaussian\", \"BIC_factor\": \"2.0\", \"peak_estim_method\": \"moment\", \"min_bandwidth\": null, \"max_bandwidth\": null, \"sd_cut_min\": \"0.01\", \"sd_cut_max\": \"500.0\", \"sigma_ratio_lim_min\": \"0.01\", \"sigma_ratio_lim_max\": \"100.0\", \"component_eliminate\": \"0.01\", \"moment_power\": \"1.0\"}, \"file\": {\"__class__\": \"RuntimeValue\"}, \"noise_filtering\": {\"min_pres\": \"0.5\", \"min_run\": \"4.0\", \"mz_tol\": \"1e-05\", \"baseline_correct\": \"0.0\", \"baseline_correct_noise_percentile\": \"0.001\", \"intensity_weighted\": \"false\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
             "tool_version": "0.9.4+galaxy0",
             "type": "tool",
-            "uuid": "df482475-299b-4535-aa2a-094b1c3be600",
+            "uuid": "0f711cbc-38e2-41fd-bef7-8b9dead6dc74",
             "workflow_outputs": [
                 {
                     "label": null,
                     "output_name": "feature_sample_table",
-                    "uuid": "40acc852-2e0a-4aea-9100-3d7f7cdcd87f"
+                    "uuid": "9a147872-8967-4911-ac16-6db87b6c6cb4"
                 }
             ]
         },
-        "2": {
-            "annotation": "",
+        "3": {
+            "annotation": "Correct retention time drift across samples.",
             "content_id": "toolshed.g2.bx.psu.edu/repos/recetox/recetox_aplcms_adjust_time/recetox_aplcms_adjust_time/0.9.4+galaxy1",
             "errors": null,
-            "id": 2,
+            "id": 3,
             "input_connections": {
                 "files": {
-                    "id": 1,
+                    "id": 2,
                     "output_name": "feature_sample_table"
                 }
             },
-            "inputs": [],
-            "label": null,
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool RECETOX apLCMS - adjust time",
+                    "name": "files"
+                }
+            ],
+            "label": "Adjust retention time",
             "name": "RECETOX apLCMS - adjust time",
             "outputs": [
                 {
@@ -113,14 +184,14 @@
                 }
             ],
             "position": {
-                "bottom": 550.3000030517578,
+                "bottom": 105.30000305175781,
                 "height": 174.8000030517578,
-                "left": 911,
-                "right": 1111,
-                "top": 375.5,
+                "left": 442.5,
+                "right": 642.5,
+                "top": -69.5,
                 "width": 200,
-                "x": 911,
-                "y": 375.5
+                "x": 442.5,
+                "y": -69.5
             },
             "post_job_actions": {},
             "tool_id": "toolshed.g2.bx.psu.edu/repos/recetox/recetox_aplcms_adjust_time/recetox_aplcms_adjust_time/0.9.4+galaxy1",
@@ -130,31 +201,44 @@
                 "owner": "recetox",
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             },
-            "tool_state": "{\"__input_ext\": \"parquet\", \"chromInfo\": \"/mnt/volume/shared/galaxy/var/tool-data/shared/ucsc/chrom/?.len\", \"files\": {\"__class__\": \"ConnectedValue\"}, \"mz_tol\": \"1e-05\", \"peak_alignment\": {\"align_chr_tol\": null, \"align_mz_tol\": null, \"max_align_mz_diff\": \"0.01\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_state": "{\"files\": {\"__class__\": \"RuntimeValue\"}, \"mz_tol\": \"1e-05\", \"peak_alignment\": {\"align_chr_tol\": null, \"align_mz_tol\": null, \"max_align_mz_diff\": \"0.01\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
             "tool_version": "0.9.4+galaxy1",
             "type": "tool",
-            "uuid": "27b288b5-a4f7-4c99-8006-819baba527bf",
+            "uuid": "ce385aad-7a86-4168-9195-2f1084f3b628",
             "workflow_outputs": [
                 {
                     "label": null,
                     "output_name": "corrected_feature_tables",
-                    "uuid": "63b3bb5a-8a83-46ae-b771-850efe2ddf22"
+                    "uuid": "fcfc2197-4506-4679-997e-592d741941eb"
                 }
             ]
         },
-        "3": {
-            "annotation": "",
+        "4": {
+            "annotation": "Create an aligned feature table across samples",
             "content_id": "toolshed.g2.bx.psu.edu/repos/recetox/recetox_aplcms_align_features/recetox_aplcms_align_features/0.9.4+galaxy1",
             "errors": null,
-            "id": 3,
+            "id": 4,
             "input_connections": {
                 "corrected_files": {
-                    "id": 2,
+                    "id": 3,
                     "output_name": "corrected_feature_tables"
+                },
+                "ms_files": {
+                    "id": 1,
+                    "output_name": "output"
                 }
             },
-            "inputs": [],
-            "label": null,
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool RECETOX apLCMS - align features",
+                    "name": "corrected_files"
+                },
+                {
+                    "description": "runtime parameter for tool RECETOX apLCMS - align features",
+                    "name": "ms_files"
+                }
+            ],
+            "label": "Align features",
             "name": "RECETOX apLCMS - align features",
             "outputs": [
                 {
@@ -171,14 +255,14 @@
                 }
             ],
             "position": {
-                "bottom": 723.1000061035156,
-                "height": 347.6000061035156,
-                "left": 1131,
-                "right": 1331,
-                "top": 375.5,
+                "bottom": 268.70001220703125,
+                "height": 327.20001220703125,
+                "left": 720.5,
+                "right": 920.5,
+                "top": -58.5,
                 "width": 200,
-                "x": 1131,
-                "y": 375.5
+                "x": 720.5,
+                "y": -58.5
             },
             "post_job_actions": {},
             "tool_id": "toolshed.g2.bx.psu.edu/repos/recetox/recetox_aplcms_align_features/recetox_aplcms_align_features/0.9.4+galaxy1",
@@ -188,57 +272,86 @@
                 "owner": "recetox",
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             },
-            "tool_state": "{\"__input_ext\": \"mzml\", \"chromInfo\": \"/mnt/volume/shared/galaxy/var/tool-data/shared/ucsc/chrom/?.len\", \"corrected_files\": {\"__class__\": \"ConnectedValue\"}, \"min_exp\": \"2\", \"ms_files\": {\"__class__\": \"ConnectedValue\"}, \"mz_tol\": \"1e-05\", \"peak_alignment\": {\"align_chr_tol\": null, \"align_mz_tol\": null, \"max_align_mz_diff\": \"0.01\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_state": "{\"corrected_files\": {\"__class__\": \"RuntimeValue\"}, \"min_exp\": \"1\", \"ms_files\": {\"__class__\": \"RuntimeValue\"}, \"mz_tol\": \"1e-05\", \"peak_alignment\": {\"align_chr_tol\": null, \"align_mz_tol\": null, \"max_align_mz_diff\": \"0.01\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
             "tool_version": "0.9.4+galaxy1",
             "type": "tool",
-            "uuid": "aa5de84a-ae31-4549-bc2f-e7bd09191bf5",
+            "uuid": "e4f0d0ea-240b-49f1-ad29-f7dc16060f86",
             "workflow_outputs": [
                 {
                     "label": null,
-                    "output_name": "rt_cross_table",
-                    "uuid": "8c8a7f56-1e0a-448d-abfb-96200e85c996"
-                },
-                {
-                    "label": null,
                     "output_name": "tolerances",
-                    "uuid": "aaa987eb-436b-48a1-a4f0-a3c6d404fce1"
+                    "uuid": "4a656ef8-25d7-4be5-97ac-c7e642d5b46f"
                 },
                 {
                     "label": null,
                     "output_name": "int_cross_table",
-                    "uuid": "6d7cad98-937f-497f-9055-f814e9576c19"
+                    "uuid": "0b462b4d-66f1-466f-9377-5c66143ff00a"
+                },
+                {
+                    "label": null,
+                    "output_name": "rt_cross_table",
+                    "uuid": "25dc17e2-abe6-4c68-9641-354479669839"
                 }
             ]
         },
-        "4": {
-            "annotation": "",
+        "5": {
+            "annotation": "Fill gaps in the aligned feature table by re-analyzing the raw data.",
             "content_id": "toolshed.g2.bx.psu.edu/repos/recetox/recetox_aplcms_recover_weaker_signals/recetox_aplcms_recover_weaker_signals/0.9.4+galaxy1",
             "errors": null,
-            "id": 4,
+            "id": 5,
             "input_connections": {
                 "corrected_files": {
-                    "id": 2,
+                    "id": 3,
                     "output_name": "corrected_feature_tables"
                 },
                 "extracted_files": {
-                    "id": 1,
+                    "id": 2,
                     "output_name": "feature_sample_table"
                 },
                 "int_cross_table_file": {
-                    "id": 3,
+                    "id": 4,
                     "output_name": "int_cross_table"
                 },
+                "ms_files": {
+                    "id": 1,
+                    "output_name": "output"
+                },
                 "rt_cross_table_file": {
-                    "id": 3,
+                    "id": 4,
                     "output_name": "rt_cross_table"
                 },
                 "tolerances_file": {
-                    "id": 3,
+                    "id": 4,
                     "output_name": "tolerances"
                 }
             },
-            "inputs": [],
-            "label": null,
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool RECETOX apLCMS - recover weaker signals",
+                    "name": "corrected_files"
+                },
+                {
+                    "description": "runtime parameter for tool RECETOX apLCMS - recover weaker signals",
+                    "name": "extracted_files"
+                },
+                {
+                    "description": "runtime parameter for tool RECETOX apLCMS - recover weaker signals",
+                    "name": "int_cross_table_file"
+                },
+                {
+                    "description": "runtime parameter for tool RECETOX apLCMS - recover weaker signals",
+                    "name": "ms_files"
+                },
+                {
+                    "description": "runtime parameter for tool RECETOX apLCMS - recover weaker signals",
+                    "name": "rt_cross_table_file"
+                },
+                {
+                    "description": "runtime parameter for tool RECETOX apLCMS - recover weaker signals",
+                    "name": "tolerances_file"
+                }
+            ],
+            "label": "Recover missing peaks",
             "name": "RECETOX apLCMS - recover weaker signals",
             "outputs": [
                 {
@@ -259,14 +372,14 @@
                 }
             ],
             "position": {
-                "bottom": 1079.1000366210938,
-                "height": 703.6000366210938,
-                "left": 1351,
-                "right": 1551,
-                "top": 375.5,
+                "bottom": 608.7000122070312,
+                "height": 683.2000122070312,
+                "left": 1018.5,
+                "right": 1218.5,
+                "top": -74.5,
                 "width": 200,
-                "x": 1351,
-                "y": 375.5
+                "x": 1018.5,
+                "y": -74.5
             },
             "post_job_actions": {},
             "tool_id": "toolshed.g2.bx.psu.edu/repos/recetox/recetox_aplcms_recover_weaker_signals/recetox_aplcms_recover_weaker_signals/0.9.4+galaxy1",
@@ -276,35 +389,35 @@
                 "owner": "recetox",
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             },
-            "tool_state": "{\"__input_ext\": \"mzml\", \"chromInfo\": \"/mnt/volume/shared/galaxy/var/tool-data/shared/ucsc/chrom/?.len\", \"corrected_files\": {\"__class__\": \"ConnectedValue\"}, \"extracted_files\": {\"__class__\": \"ConnectedValue\"}, \"int_cross_table_file\": {\"__class__\": \"ConnectedValue\"}, \"max_bandwidth\": null, \"min_bandwidth\": null, \"ms_files\": {\"__class__\": \"ConnectedValue\"}, \"mz_tol\": \"1e-05\", \"output_format\": {\"out_format\": \"false\"}, \"rt_cross_table_file\": {\"__class__\": \"ConnectedValue\"}, \"tolerances_file\": {\"__class__\": \"ConnectedValue\"}, \"weak_signal_recovery\": {\"recover_mz_range\": null, \"recover_chr_range\": null, \"use_observed_range\": \"true\", \"recover_min_count\": \"3\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_state": "{\"corrected_files\": {\"__class__\": \"RuntimeValue\"}, \"extracted_files\": {\"__class__\": \"RuntimeValue\"}, \"int_cross_table_file\": {\"__class__\": \"RuntimeValue\"}, \"max_bandwidth\": null, \"min_bandwidth\": null, \"ms_files\": {\"__class__\": \"RuntimeValue\"}, \"mz_tol\": \"1e-05\", \"output_format\": {\"out_format\": \"false\"}, \"rt_cross_table_file\": {\"__class__\": \"RuntimeValue\"}, \"tolerances_file\": {\"__class__\": \"RuntimeValue\"}, \"weak_signal_recovery\": {\"recover_mz_range\": null, \"recover_chr_range\": null, \"use_observed_range\": \"true\", \"recover_min_count\": \"3\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
             "tool_version": "0.9.4+galaxy1",
             "type": "tool",
-            "uuid": "e57e2da4-d0ec-4d9b-b28f-dd04ab27d059",
+            "uuid": "d7e52ea4-fcce-4499-affa-d10d0efb1086",
             "workflow_outputs": [
                 {
                     "label": null,
-                    "output_name": "corrected_features",
-                    "uuid": "9500e686-72ad-4b02-98ee-3e7604fe5194"
-                },
-                {
-                    "label": null,
                     "output_name": "extracted_features",
-                    "uuid": "cdabec2e-62c5-4bfe-a94e-32850dad7e73"
+                    "uuid": "305ecd40-c3cc-4508-a71c-9f009365b4ac"
                 },
                 {
                     "label": null,
-                    "output_name": "aligned_feature_sample_table",
-                    "uuid": "19d763b7-3b0a-413a-8bf3-5bbd02397e5a"
+                    "output_name": "corrected_features",
+                    "uuid": "025e2eb2-a669-4c4f-a11e-acc82834c6ea"
                 },
                 {
                     "label": null,
                     "output_name": "recovered_feature_sample_table",
-                    "uuid": "5c3168ed-b1fc-48f1-95b7-4bb78d2fec58"
+                    "uuid": "bc1d24a6-df6f-4d80-b330-35d4f126b516"
+                },
+                {
+                    "label": null,
+                    "output_name": "aligned_feature_sample_table",
+                    "uuid": "a473d3b8-3b16-4402-8ba1-18e9687fec17"
                 }
             ]
         }
     },
     "tags": [],
-    "uuid": "833a7d69-b0d3-478a-9ed0-12c23e046646",
-    "version": 1
+    "uuid": "28f0c83e-2ca0-447c-a12a-d1efdd90d4e2",
+    "version": 9
 }
