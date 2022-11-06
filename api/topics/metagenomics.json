@@ -87,7 +87,6 @@
           "url": "https://training.galaxyproject.org/training-material/api/contributors/shiltemann.json"
         }
       ],
-      "last_modified_at": "09-Jul-21",
       "url": "/topics/metagenomics/slides/introduction.html",
       "topic_name": "metagenomics",
       "tutorial_name": "introduction",
@@ -149,7 +148,6 @@
           "url": "https://training.galaxyproject.org/training-material/api/contributors/tnabtaf.json"
         }
       ],
-      "last_modified_at": "20-May-19",
       "url": "/topics/metagenomics/tutorials/mothur-miseq-sop/tutorial.html",
       "topic_name": "metagenomics",
       "tutorial_name": "mothur-miseq-sop",
@@ -266,7 +264,6 @@
           "url": "https://training.galaxyproject.org/training-material/api/contributors/tnabtaf.json"
         }
       ],
-      "last_modified_at": "01-May-19",
       "url": "/topics/metagenomics/tutorials/mothur-miseq-sop-short/tutorial.html",
       "topic_name": "metagenomics",
       "tutorial_name": "mothur-miseq-sop-short",
@@ -274,15 +271,11 @@
       "slides": false,
       "workflows": [
         {
-          "workflow": "workflow4_mock_otu_clustering.ga",
-          "tests": false
-        },
-        {
-          "workflow": "workflow5_otu_clustering.ga",
-          "tests": false
-        },
-        {
           "workflow": "workflow2_data_cleaning.ga",
+          "tests": false
+        },
+        {
+          "workflow": "workflow6_alpha_diversity.ga",
           "tests": false
         },
         {
@@ -294,11 +287,15 @@
           "tests": false
         },
         {
-          "workflow": "workflow1_quality_control.ga",
+          "workflow": "workflow5_otu_clustering.ga",
           "tests": false
         },
         {
-          "workflow": "workflow6_alpha_diversity.ga",
+          "workflow": "workflow4_mock_otu_clustering.ga",
+          "tests": false
+        },
+        {
+          "workflow": "workflow1_quality_control.ga",
           "tests": false
         }
       ],
@@ -378,7 +375,6 @@
       "tags": [
         "nanopore"
       ],
-      "last_modified_at": "16-Oct-21",
       "url": "/topics/metagenomics/tutorials/nanopore-16S-metagenomics/tutorial.html",
       "topic_name": "metagenomics",
       "tutorial_name": "nanopore-16S-metagenomics",
@@ -468,7 +464,6 @@
           "url": "https://training.galaxyproject.org/training-material/api/contributors/bebatut.json"
         }
       ],
-      "last_modified_at": "11-Jun-20",
       "url": "/topics/metagenomics/tutorials/general-tutorial/tutorial.html",
       "topic_name": "metagenomics",
       "tutorial_name": "general-tutorial",
@@ -476,12 +471,12 @@
       "slides": false,
       "workflows": [
         {
-          "workflow": "wgs-worklow.ga",
-          "tests": false
-        },
-        {
           "workflow": "amplicon.ga",
           "tests": true
+        },
+        {
+          "workflow": "wgs-worklow.ga",
+          "tests": false
         }
       ],
       "tools": [
@@ -576,7 +571,6 @@
         "assembly",
         "amr"
       ],
-      "last_modified_at": "24-Mar-21",
       "url": "/topics/metagenomics/tutorials/plasmid-metagenomics-nanopore/tutorial.html",
       "topic_name": "metagenomics",
       "tutorial_name": "plasmid-metagenomics-nanopore",
@@ -622,6 +616,117 @@
       "urls": {
         "hands_on": "https://training.galaxyproject.org/training-material/api/topics//metagenomics/tutorials/plasmid-metagenomics-nanopore/tutorial.json",
         "slides": "https://training.galaxyproject.org/training-material/api/topics//metagenomics/tutorials/plasmid-metagenomics-nanopore/tutorial.json"
+      }
+    },
+    {
+      "layout": "tutorial_hands_on",
+      "title": "Identification of the micro-organisms in a beer using Nanopore sequencing",
+      "zenodo_link": "https://doi.org/10.5281/zenodo.7093173",
+      "level": "Introductory",
+      "questions": [
+        "How can yeast strains in a beer sample be identified?",
+        "How can we process metagenomic data sequenced using Nanopore?"
+      ],
+      "objectives": [
+        "Inspect metagenomics data",
+        "Run metagenomics tools",
+        "Identify yeast species contained in a sequenced beer sample using DNA",
+        "Visualize the microbiome community of a beer sample"
+      ],
+      "time_estimation": "1H",
+      "key_points": [
+        "Data obtained by sequencing needs to be checked for quality and cleaned before further processing",
+        "Yeast species but also contamination can be identified and visualized directly from the sequences using several bioinformatics tools",
+        "With its graphical interface, Galaxy makes it easy to use the needed bioinformatics tools",
+        "Beer microbiome is not just made of yeast and can be quite complex"
+      ],
+      "tags": [
+        "nanopore",
+        "beer",
+        "citizen science",
+        "metagenomics"
+      ],
+      "contributions": {
+        "authorship": [
+          "plushz",
+          "chensy96",
+          "bebatut",
+          "teresa-m"
+        ]
+      },
+      "url": "/topics/metagenomics/tutorials/beer-data-analysis/tutorial.html",
+      "topic_name": "metagenomics",
+      "tutorial_name": "beer-data-analysis",
+      "hands_on": true,
+      "slides": false,
+      "workflows": [
+        {
+          "workflow": "main_workflow.ga",
+          "tests": false
+        }
+      ],
+      "tools": [
+        "Filter1",
+        "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_replace_in_line/1.1.2",
+        "toolshed.g2.bx.psu.edu/repos/crs4/taxonomy_krona_chart/taxonomy_krona_chart/2.7.1",
+        "toolshed.g2.bx.psu.edu/repos/crs4/taxonomy_krona_chart/taxonomy_krona_chart/2.7.1+galaxy0",
+        "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0",
+        "toolshed.g2.bx.psu.edu/repos/iuc/datamash_reverse/datamash_reverse/1.1.0",
+        "toolshed.g2.bx.psu.edu/repos/iuc/fastp/fastp/0.23.2+galaxy0",
+        "toolshed.g2.bx.psu.edu/repos/iuc/kraken2/kraken2/2.0.8_beta+galaxy0",
+        "toolshed.g2.bx.psu.edu/repos/iuc/kraken2/kraken2/2.1.1+galaxy1",
+        "toolshed.g2.bx.psu.edu/repos/iuc/metaphlan2krona/metaphlan2krona/2.6.0.0",
+        "toolshed.g2.bx.psu.edu/repos/iuc/porechop/porechop/0.2.3",
+        "toolshed.g2.bx.psu.edu/repos/iuc/porechop/porechop/0.2.4+galaxy0"
+      ],
+      "tours": false,
+      "video": false,
+      "translations": {
+        "tutorial": [
+
+        ],
+        "slides": [
+
+        ],
+        "video": false
+      },
+      "type": "tutorial",
+      "contributors": [
+        {
+          "name": "Polina Polunina",
+          "gitter": "PlushZ",
+          "joined": "2022-03",
+          "id": "plushz",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/plushz.json"
+        },
+        {
+          "name": "Siyu Chen",
+          "joined": "2022-05",
+          "id": "chensy96",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/chensy96.json"
+        },
+        {
+          "name": "Bérénice Batut",
+          "email": "berenice.batut@gmail.com",
+          "twitter": "bebatut",
+          "linkedin": "berenicebatut",
+          "gitter": "bebatut",
+          "orcid": "0000-0001-9852-1987",
+          "joined": "2017-09",
+          "elixir_node": "de",
+          "id": "bebatut",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/bebatut.json"
+        },
+        {
+          "name": "Teresa Müller",
+          "joined": "2022-09",
+          "id": "teresa-m",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/teresa-m.json"
+        }
+      ],
+      "urls": {
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//metagenomics/tutorials/beer-data-analysis/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics//metagenomics/tutorials/beer-data-analysis/tutorial.json"
       }
     },
     {
@@ -717,7 +822,6 @@
           "url": "https://training.galaxyproject.org/training-material/api/contributors/shiltemann.json"
         }
       ],
-      "last_modified_at": "20-May-21",
       "url": "/topics/metagenomics/tutorials/metatranscriptomics/tutorial.html",
       "topic_name": "metagenomics",
       "tutorial_name": "metatranscriptomics",
@@ -846,7 +950,6 @@
           "url": "https://training.galaxyproject.org/training-material/api/contributors/shiltemann.json"
         }
       ],
-      "last_modified_at": "20-May-21",
       "url": "/topics/metagenomics/tutorials/metatranscriptomics-short/tutorial.html",
       "topic_name": "metagenomics",
       "tutorial_name": "metatranscriptomics-short",
@@ -858,11 +961,11 @@
           "tests": false
         },
         {
-          "workflow": "workflow3_functional_information.ga",
+          "workflow": "workflow1_preprocessing.ga",
           "tests": false
         },
         {
-          "workflow": "workflow1_preprocessing.ga",
+          "workflow": "workflow3_functional_information.ga",
           "tests": false
         },
         {

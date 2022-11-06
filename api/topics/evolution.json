@@ -68,7 +68,6 @@
           "url": "https://training.galaxyproject.org/training-material/api/contributors/cstritt.json"
         }
       ],
-      "last_modified_at": "16-Mar-22",
       "url": "/topics/evolution/tutorials/mtb_transmission/tutorial.html",
       "topic_name": "evolution",
       "tutorial_name": "mtb_transmission",
@@ -76,15 +75,15 @@
       "slides": false,
       "workflows": [
         {
-          "workflow": "Galaxy-Workflow-From_BAMs_to_drug_resistance_prediction_with_TB-profiler.ga",
-          "tests": false
-        },
-        {
           "workflow": "Galaxy-Workflow-From_Fastqs_to_VCFs_and_BAMs.ga",
           "tests": false
         },
         {
           "workflow": "main_workflow.ga",
+          "tests": false
+        },
+        {
+          "workflow": "Galaxy-Workflow-From_BAMs_to_drug_resistance_prediction_with_TB-profiler.ga",
           "tests": false
         }
       ],
@@ -167,7 +166,6 @@
           "url": "https://training.galaxyproject.org/training-material/api/contributors/GaloGS.json"
         }
       ],
-      "last_modified_at": "18-Mar-22",
       "url": "/topics/evolution/tutorials/mtb_phylogeny/tutorial.html",
       "topic_name": "evolution",
       "tutorial_name": "mtb_phylogeny",
