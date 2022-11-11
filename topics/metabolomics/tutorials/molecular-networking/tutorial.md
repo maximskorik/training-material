@@ -27,7 +27,7 @@ contributors:
 
 Add section about untargeted mass spec.
 
-Molecular Networking (MN) is a powerful technique for visualizing chemical space of untargeted chromatography-mass spectrometry experiments. This approach makes it easier to discover the related molecules in your dataset even when some of them have not been matched to any known compound in the spectral libraries {% cite Aksenov2017 %}.
+Molecular Networking (MN) is a powerful technique for visualizing chemical space of untargeted chromatography-mass spectrometry experiments. This approach makes it easier to discover the related molecules in your dataset even when some of them have not been matched to any known compound in the spectral libraries ({% cite Aksenov2017 %}).
 
 In this tutorial you will learn how to prepare your data for a molecular networking analysis and use the networks to propagate spectra annotations. You will also learn how to compute similarity between a pair of spectra, and the differences between various similarity metrics.
 
@@ -141,10 +141,12 @@ created a new field `ION_MODE` and set it to `n/a` as well as added a `CHARGE` f
 
 ## Enhance Metadata with **MSMetaEnhancer**
 
-> <hands-on-title> Task description </hands-on-title>
+Now that our data is clean and normalized we can query some public chemical databases to extend the information of annotated compounds. **MSMetaEnhancer** ({% cite Troják2022 %}) can perform various tasks and conversions, such as retrieve *SMILES*, *InChi* or *molecular weight* of annotated spectra. These additional metadata will be useful for us later, when we will be exploring a molecular network of this spectra.
+
+> <hands-on-title> Metadata Retrieval </hands-on-title>
 >
-> 1. {% tool [MSMetaEnhancer](toolshed.g2.bx.psu.edu/repos/recetox/msmetaenhancer/msmetaenhancer/0.2.5+galaxy1) %} with the following parameters:
->    - {% icon param-file %} *"Input spectra dataset"*: `output` (output of **matchMS filtering** {% icon tool %})
+> 1. Run {% tool [MSMetaEnhancer](toolshed.g2.bx.psu.edu/repos/recetox/msmetaenhancer/msmetaenhancer/0.2.5+galaxy1) %} with the following parameters:
+>    - {% icon param-file %} *"Input spectra dataset"*: `filtered msp spectra` (output of **matchMS filtering** {% icon tool %})
 >    - In *"Ordered conversions"*:
 >        - {% icon param-repeat %} *"Insert Ordered conversions"*
 >            - *"Available conversions"*: `PubChem: compound_name -> canonical_smiles`
@@ -152,31 +154,23 @@ created a new field `ION_MODE` and set it to `n/a` as well as added a `CHARGE` f
 >            - *"Available conversions"*: `PubChem: compound_name -> formula`
 >        - {% icon param-repeat %} *"Insert Ordered conversions"*
 >            - *"Available conversions"*: `PubChem: compound_name -> inchi`
->    - In *"Options"*:
->        - *"Save the log file"*: `Yes`
 >
->    ***TODO***: *Check parameter descriptions*
+>    ***TODO***: *Expand "Available conversions" dropdown menu on the tool's page and check the available conversions.*
 >
->    ***TODO***: *Consider adding a comment or tip box*
->
->    > <comment-title> short description </comment-title>
+>    > <comment-title> Output </comment-title>
 >    >
->    > A comment about the tool or something else. This box can also be in the main text
+>    > **MSMEtaEnhancer** will output a new `.msp` file with new metadata fields correspoding to the conversions that we selected. Also, notice how the conversions that we selected in this run use `compound_name` as a source. This is one of the cases where the metadata harmonization from the previous step is crutial.
 >    {: .comment}
 >
 {: .hands_on}
 
-***TODO***: *Consider adding a question to test the learners understanding of the previous exercise*
-
 > <question-title></question-title>
 >
-> 1. Question1?
-> 2. Question2?
+> How many services can **MSMetaEnhancer** query to fetch the metadata?
 >
 > > <solution-title></solution-title>
 > >
-> > 1. Answer for question1
-> > 2. Answer for question2
+> > Right now there are **7** different services: RDKit, IDSM, CTS, CIR, NLM, PubChem, and BridgeDB, but more are on the way!
 > >
 > {: .solution}
 >
