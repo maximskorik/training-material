@@ -77,7 +77,7 @@ Some background on the data.
 
 ## Explore the Data
 
-* Visualize the data with Galaxy built-in editor: **vis icon**
+* Visualize the data with Galaxy built-in editor: {% icon galaxy-barchart %} **vis icon**
 * Explain the fields
 
 # Molecular Networking Workflow
@@ -98,11 +98,11 @@ The idea is to keep the theory description before quite simple to focus more on 
 A big step can have several subsections or sub steps:
 
 
-## Clean and Normalize Metadata
+## Clean and Normalize the Data
 
 Before we dive into processing and analyzing the data it is useful to make sure all the spectra are normalized to a single format, which the upstream tools in our workflow can work with. We can achieve this with **matchMS filtering**. This tool has a variety a of options to normalize the data. It can process spectrums peaks like normalizing intensities if our spectra are combined from different sources or apply windows on *m/z* or intensity ranges; it will clean, correct, and harmonize metadata, and more. For a complete list of steps see [matchMS](https://matchms.readthedocs.io/en/latest/?badge=latest) documentation, in particular [filtering package](https://matchms.readthedocs.io/en/latest/api/matchms.filtering.html). The tool also includes helpful annotations under each parameter to get you started.
 
-> <hands-on-title> Task description </hands-on-title>
+> <hands-on-title> Data filtering and normalization </hands-on-title>
 >
 > 1. Run {% tool [matchMS filtering](toolshed.g2.bx.psu.edu/repos/recetox/matchms_filtering/matchms_filtering/0.17.0+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Spectra file"*: `input.msp` (Input spectra in MSP format)
@@ -112,24 +112,28 @@ Before we dive into processing and analyzing the data it is useful to make sure 
 >    - *"Filter relative intensity"*: `No`
 >    - *"Filter m/z range"*: `No`
 >
->    ***TODO***: Check parameter descriptions to see what the tool can do.
+>    ***TODO***: Check parameter descriptions to see what filtering and normalization the tool can do.
 >
->    > <comment-title> short description </comment-title>
+>    > <comment-title> Output </comment-title>
 >    >
->    > There is no need to norma
+>    > This will output an `msp` file with normalized intensities (from 0 to 1) and harmonized metadata. There is no need to apply intensity or
+*m/z* windows since we want to keep all the peaks.
 >    {: .comment}
 >
 {: .hands_on}
 
 > <question-title></question-title>
 >
-> 1. Question1?
-> 2. Question2?
+> Check the first spectrum of the newly created dataset the same way as we did before an try to answer these questions:
+> 1. Are there any changes in peaks intensities or metadata-field names?
+> 2. Are there any new metadata fields?
 >
 > > <solution-title></solution-title>
 > >
-> > 1. Answer for question1
-> > 2. Answer for question2
+> > 1. All intensity values are now mapped to range from 0 to 1. Some metadata fields have been swapped in places and some of them renamed, e.g.,
+`RETENTIONTIME` -> `RETENTION_TIME` and `NAME` -> `COMPOUND_NAME`. This will make this data compatible with the tools in the next steps of the workflow.
+> > 2. The tool also tried to conclude the charge of precursor based on the ion mode. But since it couldn't find the ion mode for the spectra, it
+created a new field `ION_MODE` and set it to `n/a` as well as added a `CHARGE` field with a default value of `0`.
 > >
 > {: .solution}
 >
