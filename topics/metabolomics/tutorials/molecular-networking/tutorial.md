@@ -176,7 +176,7 @@ Now that our data is clean and normalized we can query some public chemical data
 >
 {: .question}
 
-## Compute Spectral Similairity
+## Compute Spectral Similairity Scores
 
 > <hands-on-title> Task description </hands-on-title>
 >
@@ -246,14 +246,6 @@ Now that our data is clean and normalized we can query some public chemical data
 > {: .solution}
 >
 {: .question}
-
-
-## Re-arrange
-
-To create the template, each step of the workflow had its own subsection.
-
-***TODO***: *Re-arrange the generated subsections into sections or other subsections.
-Consider merging some hands-on boxes to have a meaningful flow of the analyses*
 
 # Visualize Molecular Network
 
