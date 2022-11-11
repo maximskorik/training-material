@@ -13,6 +13,7 @@ objectives:
 - Learn molecular networking basics
 - Create a molecular network using Galaxy
 time_estimation: 3H
+level: Introductory
 key_points:
 - The take-home messages
 - They will appear at the end of the tutorial
@@ -24,29 +25,11 @@ contributors:
 
 # Introduction
 
-<!-- This is a comment. -->
+Add section about untargeted mass spec.
 
-General introduction about the topic and then an introduction of the
-tutorial (the questions and the objectives). It is nice also to have a
-scheme to sum up the pipeline used during the tutorial. The idea is to
-give to trainees insight into the content of the tutorial and the (theoretical
-and technical) key concepts they will learn.
+Molecular Networking (MN) is a powerful technique for visualizing chemical space of untargeted chromatography-mass spectrometry experiments. This approach makes it easier to discover the related molecules in your dataset even when some of them have not been matched to any known compound in the spectral libraries {% cite Aksenov2017 %}.
 
-You may want to cite some publications; this can be done by adding citations to the
-bibliography file (`tutorial.bib` file next to your `tutorial.md` file). These citations
-must be in bibtex format. If you have the DOI for the paper you wish to cite, you can
-get the corresponding bibtex entry using [doi2bib.org](https://doi2bib.org).
-
-With the example you will find in the `tutorial.bib` file, you can add a citation to
-this article here in your tutorial like this:
-{% raw %} `{% cite Batut2018 %}`{% endraw %}.
-This will be rendered like this: {% cite Batut2018 %}, and links to a
-[bibliography section](#bibliography) which will automatically be created at the end of the
-tutorial.
-
-
-**Please follow our
-[tutorial to learn how to fill the Markdown]({{ site.baseurl }}/topics/contributing/tutorials/create-new-tutorial-content/tutorial.html)**
+In this tutorial you will learn how to prepare your data for a molecular networking analysis and use the networks to propagate spectra annotations. You will also learn how to compute similarity between a pair of spectra, and the differences between various similarity metrics.
 
 > <agenda-title></agenda-title>
 >
@@ -57,28 +40,11 @@ tutorial.
 >
 {: .agenda}
 
-# Title for your first section
+# Dataset
 
-Give some background about what the trainees will be doing in the section.
-Remember that many people reading your materials will likely be novices,
-so make sure to explain all the relevant concepts.
+Some background on the data.
 
-## Title for a subsection
-Section and subsection titles will be displayed in the tutorial index on the left side of
-the page, so try to make them informative and concise!
-
-# Hands-on Sections
-Below are a series of hand-on boxes, one for each tool in your workflow file.
-Often you may wish to combine several boxes into one or make other adjustments such
-as breaking the tutorial into sections, we encourage you to make such changes as you
-see fit, this is just a starting point :)
-
-Anywhere you find the word "***TODO***", there is something that needs to be changed
-depending on the specifics of your tutorial.
-
-have fun!
-
-## Get data
+## Load the Data
 
 > <hands-on-title> Data Upload </hands-on-title>
 >
@@ -109,12 +75,15 @@ have fun!
 >
 {: .hands_on}
 
-# Title of the section usually corresponding to a big step in the analysis
+## Explore the Data
+
+* Visualize the data with Galaxy built-in editor: **vis icon**
+* Explain the fields
+
+# Molecular Networking Workflow
 
 It comes first a description of the step: some background and some theory.
 Some image can be added there to support the theory explanation:
-
-![Alternative text](../../images/image_name "Legend of the image")
 
 The idea is to keep the theory description before quite simple to focus more on the practical part.
 
@@ -129,30 +98,28 @@ The idea is to keep the theory description before quite simple to focus more on 
 A big step can have several subsections or sub steps:
 
 
-## Sub-step with **matchMS filtering**
+## Clean and Normalize Metadata
+
+Before we dive into processing and analyzing the data it is useful to make sure all the spectra are normalized to a single format, which the upstream tools in our workflow can work with. We can achieve this with **matchMS filtering**. This tool has a variety a of options to normalize the data. It can process spectrums peaks like normalizing intensities if our spectra are combined from different sources or apply windows on *m/z* or intensity ranges; it will clean, correct, and harmonize metadata, and more. For a complete list of steps see [matchMS](https://matchms.readthedocs.io/en/latest/?badge=latest) documentation, in particular [filtering package](https://matchms.readthedocs.io/en/latest/api/matchms.filtering.html). The tool also includes helpful annotations under each parameter to get you started.
 
 > <hands-on-title> Task description </hands-on-title>
 >
-> 1. {% tool [matchMS filtering](toolshed.g2.bx.psu.edu/repos/recetox/matchms_filtering/matchms_filtering/0.17.0+galaxy0) %} with the following parameters:
->    - {% icon param-file %} *"Spectra file"*: `output` (Input dataset)
+> 1. Run {% tool [matchMS filtering](toolshed.g2.bx.psu.edu/repos/recetox/matchms_filtering/matchms_filtering/0.17.0+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Spectra file"*: `input.msp` (Input spectra in MSP format)
 >    - *"Normalize intensities"*: `Yes`
 >    - *"Apply default filters"*: `Yes`
 >    - *"Clean metadata"*: `Yes`
->    - *"Filter relative intensity"*: `Yes`
->    - *"Filter m/z range"*: `Yes`
+>    - *"Filter relative intensity"*: `No`
+>    - *"Filter m/z range"*: `No`
 >
->    ***TODO***: *Check parameter descriptions*
->
->    ***TODO***: *Consider adding a comment or tip box*
+>    ***TODO***: Check parameter descriptions to see what the tool can do.
 >
 >    > <comment-title> short description </comment-title>
 >    >
->    > A comment about the tool or something else. This box can also be in the main text
+>    > There is no need to norma
 >    {: .comment}
 >
 {: .hands_on}
-
-***TODO***: *Consider adding a question to test the learners understanding of the previous exercise*
 
 > <question-title></question-title>
 >
@@ -168,7 +135,7 @@ A big step can have several subsections or sub steps:
 >
 {: .question}
 
-## Sub-step with **MSMetaEnhancer**
+## Enhance Metadata with **MSMetaEnhancer**
 
 > <hands-on-title> Task description </hands-on-title>
 >
@@ -211,7 +178,7 @@ A big step can have several subsections or sub steps:
 >
 {: .question}
 
-## Sub-step with **matchMS similarity**
+## Compute Spectral Similairity
 
 > <hands-on-title> Task description </hands-on-title>
 >
@@ -247,7 +214,7 @@ A big step can have several subsections or sub steps:
 >
 {: .question}
 
-## Sub-step with **matchMS networking**
+## Generate Molecular Network Graph
 
 > <hands-on-title> Task description </hands-on-title>
 >
@@ -289,6 +256,8 @@ To create the template, each step of the workflow had its own subsection.
 
 ***TODO***: *Re-arrange the generated subsections into sections or other subsections.
 Consider merging some hands-on boxes to have a meaningful flow of the analyses*
+
+# Visualize Molecular Network
 
 # Conclusion
 
