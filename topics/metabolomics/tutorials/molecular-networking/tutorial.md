@@ -27,7 +27,7 @@ contributors:
 
 Add section about untargeted mass spec.
 
-Molecular Networking is a powerful technique for visualizing chemical space of untargeted chromatography-mass spectrometry experiments. This approach makes it easier to discover the related molecules in your dataset even when some of them have not been matched to any known compound in the spectral libraries ({% cite Aksenov2017 %}).
+Molecular Networking is a powerful technique for visualizing chemical space of untargeted chromatography-mass spectrometry experiments. This method is based on plotting spectral data as networks of mass spectral nodes interconnected via edges that represent the similarity between corresponding pairs of spectra. Such an approach simplifies interpretation and discovery of the related molecules in your dataset even when some of them have not been matched to any known compound in the spectral libraries ({% cite Aksenov2017 %}).
 
 In this tutorial you will learn how to prepare your data for a molecular networking analysis and use the networks to propagate spectra annotations. You will also learn how to compute similarity between a pair of spectra, and the differences between various similarity metrics. During the tutorial we will use several modules of [MatchMS](https://github.com/matchms/matchms) ({% cite Huber2020 %}) – a package for computational mass spectrometry, [MSMetaEnhancer](https://github.com/RECETOX/MSMetaEnhancer) ({% cite Troják2022 %}) – a tool for `.msp` files annotation, and explore graph visualization tools such as [Cytoscape](https://cytoscape.org/) ({% cite Shannon2003 %}) and [MetGem](https://metgem.github.io/) ({% cite Olivon2018 %}).
 
