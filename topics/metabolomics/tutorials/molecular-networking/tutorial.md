@@ -178,6 +178,8 @@ Now that our data is clean and normalized we can query some public chemical data
 
 ## Compute Spectral Similairity Scores
 
+After having preprocessed the spectral data we can compute spectral similarity scores. The spectral similairity between each pair of spectra in the dataset will enable us to build a spectral similarity graph, better known as a Molecular Network.
+
 > <hands-on-title> Task description </hands-on-title>
 >
 > 1. {% tool [matchMS similarity](toolshed.g2.bx.psu.edu/repos/recetox/matchms/matchms/0.17.0+galaxy0) %} with the following parameters:
@@ -195,6 +197,12 @@ Now that our data is clean and normalized we can query some public chemical data
 >    {: .comment}
 >
 {: .hands_on}
+
+> <details-title> Overview of the spectral similarity scores </details-title>
+>
+> But to describe more details, it is possible to use the detail boxes which are expandable
+>
+{: .details}
 
 ***TODO***: *Consider adding a question to test the learners understanding of the previous exercise*
 
