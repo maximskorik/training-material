@@ -178,22 +178,22 @@ Now that our data is clean and normalized we can query some public chemical data
 
 ## Compute Spectral Similairity Scores
 
-After having preprocessed the spectral data we can compute spectral similarity scores. The spectral similairity between each pair of spectra in the dataset will enable us to build a spectral similarity graph, better known as a Molecular Network.
+After having preprocessed the spectral data we can compute spectral similarity scores. To do this we use **matchMS similarity** {% icon tool %} tool, which can compute similarity scores not only for molecular networking, but also to query mass spectra against a library of known compounds.
 
 > <hands-on-title> Task description </hands-on-title>
 >
 > 1. {% tool [matchMS similarity](toolshed.g2.bx.psu.edu/repos/recetox/matchms/matchms/0.17.0+galaxy0) %} with the following parameters:
->    - {% icon param-file %} *"Queries spectra"*: `output_file` (output of **MSMetaEnhancer** {% icon tool %})
->    - *"Symmetric"*: `Yes`
->    - *"Apply RI filtering"*: `Yes`
+>    - {% icon param-file %} *"Queries spectra"*: `annotated msp spectra` (output of **MSMetaEnhancer** {% icon tool %})
+>    - *"Symmetric"*: `Yes` (if we were to query our spectra agains a spectral library we would select `No`)
+>    - *"Similarity metric"*: `CosineGreedy`
 >
->    ***TODO***: *Check parameter descriptions*
+>    ***TODO***: *Check descriptions of "Algorithm Parameters" section. If you want to know more what they are for expand the "Details" section below.*
 >
->    ***TODO***: *Consider adding a comment or tip box*
->
->    > <comment-title> short description </comment-title>
+>    > <comment-title> Output </comment-title>
 >    >
->    > A comment about the tool or something else. This box can also be in the main text
+>    > The output of the tool is a `json` file. This format is very simple to read for our computers, but not so much for us.
+If you would like to check the scores besides the molecular networking, you can use **matchMS output formatter** {% icon tool %}.
+Just pass the `json` output to this tool and it will convert the data to a tab-separated file with a scores matrix. 
 >    {: .comment}
 >
 {: .hands_on}
