@@ -237,24 +237,22 @@ During the molecular networking workflow however, we want to compute similarity 
 
 ## Generate Molecular Network Graph
 
+Finally, after we have computed the similarity scores, it is time to generate a molecular network file, which can be used by graph visualization tools such as [Cytoscape](https://cytoscape.org/) or [MetGem](https://metgem.github.io/). This can be done by **matchMS networking** tool.
+
 > <hands-on-title> Task description </hands-on-title>
 >
 > 1. {% tool [matchMS networking](toolshed.g2.bx.psu.edu/repos/recetox/matchms_networking/matchms_networking/0.17.0+galaxy0) %} with the following parameters:
->    - {% icon param-file %} *"Similarity scores"*: `similarity_scores` (output of **matchMS similarity** {% icon tool %})
->    - *"Identifier key"*: `compound_name`
+>    - {% icon param-file %} *"Similarity scores"*: `json file with similarity scores` (output of **matchMS similarity** {% icon tool %})
+>    - *"Network-graph format"*: `graphml`
+>    - *"Identifier key"*: `compound_name` (a unique metadata identifier of each spectrum)
 >
->    ***TODO***: *Check parameter descriptions*
->
->    ***TODO***: *Consider adding a comment or tip box*
->
->    > <comment-title> short description </comment-title>
+>    > <comment-title> Output </comment-title>
 >    >
->    > A comment about the tool or something else. This box can also be in the main text
+>    > **matchMS networking** {% icon tool %} can generate network files in various formats. You can select a format which is accepted by a
+graph visualization tool of your liking. In this tutorial we will be using [Cytoscape](https://cytoscape.org/) and [MetGem](https://metgem.github.io/), which can import data in `graphml` format.
 >    {: .comment}
 >
 {: .hands_on}
-
-***TODO***: *Consider adding a question to test the learners understanding of the previous exercise*
 
 > <question-title></question-title>
 >
