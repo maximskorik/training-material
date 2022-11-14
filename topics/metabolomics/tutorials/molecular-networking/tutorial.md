@@ -218,16 +218,17 @@ Just pass the `json` output to this tool and it will convert the data to a tab-s
 >
 {: .details}
 
-***TODO***: *Consider adding a question to test the learners understanding of the previous exercise*
-
 > <question-title></question-title>
 >
-> 1. Question1?
-> 2. Question2?
+> 1. Why, when computing similarity scores for molecular networking, we run **matchMS similarity** {% icon tool %} with *"Symmetric"* parameter set to `Yes`?
+> 2. What similarity metrics can only be used for *MS<sup>n</sup>* spectra and not for *MS<sup>1</sup>* (you may need to go through *Details* section to find that out)?
 >
 > > <solution-title></solution-title>
 > >
-> > 1. Answer for question1
+> > 1. Setting *"Symmetric"* to `No` is useful when we want to compute similarity between two different sets of spectra.
+In this case Galaxy will let you pass a second file to the tool, which will be used as a reference.
+A possible scenario is if we want to compute similarities between our experimental data and spectra from a spectral library.
+During the molecular networking workflow however, we want to compute similarity scores between the spectra from within our experimental data and not another set of spectra.
 > > 2. Answer for question2
 > >
 > {: .solution}
