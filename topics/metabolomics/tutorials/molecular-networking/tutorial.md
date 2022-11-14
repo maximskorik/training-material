@@ -200,7 +200,21 @@ After having preprocessed the spectral data we can compute spectral similarity s
 
 > <details-title> Overview of the spectral similarity scores </details-title>
 >
-> But to describe more details, it is possible to use the detail boxes which are expandable
+> **Cosine Greedy**
+> > foo
+> >
+>
+> **Cosine Hungarian**
+> > bar
+> >
+>
+> **Modified Cosine**
+> > foo
+> >
+>
+> **Neutral Losses Cosine**
+> > bar
+> >
 >
 {: .details}
 
