@@ -49,36 +49,65 @@ Some background on the data.
 > <hands-on-title> Data Upload </hands-on-title>
 >
 > 1. Create a new history for this tutorial
-> 2. Import the files from [Zenodo]({{ page.zenodo_link }}) or from
->    the shared data library (`GTN - Material` -> `{{ page.topic_name }}`
->     -> `{{ page.title }}`):
+> 2. Import the `.msp` file from [Zenodo]({{ page.zenodo_link }}):
 >
 >    ```
->    
+>    # add url link to the dataset
 >    ```
->    ***TODO***: *Add the files by the ones on Zenodo here (if not added)*
->
->    ***TODO***: *Remove the useless files (if added)*
 >
 >    {% snippet faqs/galaxy/datasets_import_via_link.md %}
 >
->    {% snippet faqs/galaxy/datasets_import_from_data_library.md %}
 >
-> 3. Rename the datasets
-> 4. Check that the datatype
+> 3. Rename the dataset to `seminal_plasma_spectra`
+> 4. Check that the file format in the Galaxy history is set to `msp`, set it to `msp` manually if it is different
 >
 >    {% snippet faqs/galaxy/datasets_change_datatype.md datatype="datatypes" %}
->
-> 5. Add to each database a tag corresponding to ...
->
->    {% snippet faqs/galaxy/datasets_add_tag.md %}
 >
 {: .hands_on}
 
 ## Explore the Data
 
-* Visualize the data with Galaxy built-in editor: {% icon galaxy-barchart %} **vis icon**
-* Explain the fields
+Our spectral data comes in MSP format, which is a text file with spectra in the **NIST Search** format.
+MSP is one of generally accepted formats for mass spectra representations and it is compatible with lots of spectra processing programms (MS-DIAL, NIST MS Search, AMDIS, etc.).
+
+Because MSP files are text-based, they can be explored accordingly. You can use any text editor that you have on your computer or use Galaxy built-in editor. In this tutorial we will use the Galaxy editor to check the contents of the file:
+> <hands-on-title> Data Exploration </hands-on-title>
+>
+> 1. Click *"Visualize this data"* {% icon galaxy-barchart %} icon next to the dataset in the Galaxy history
+> 2. Select the *"Editor"* {% icon galaxy-eye %} tool. The first spectra would look like this:
+>
+>    ```
+>     1 NAME: UnknownID=2|RT=2.035|RI=1090.5
+>     2 SCANNUMBER: 13
+>     3 RETENTIONTIME: 2.035461
+>     4 RETENTIONINDEX: 1090.48
+>     5 MODELION: 154.0318
+>     6 MODELIONHEIGHT: 8473462
+>     7 MODELIONAREA: 8473462
+>     8 INTEGRATEDHEIGHT: 8473462
+>     9 INTEGRATEDAREA: 8473462
+>    10 COMMENT: ID:2|RT:2.035461|RI:1090.48
+>    11 Num Peaks: 78
+>    12 70.02345	10915
+>    13 71.04917	357446
+>       ...
+>    89 283.07889	56537
+>    90
+>       ...
+>    ```
+>
+>    > <comment-title> Omitted lines </comment-title>
+>    >
+>    > The lines 14 to 88 have the same format as 12, 13, and 89, and are omitted for the sake of simplicity.
+>    {: .comment}
+>
+{: .hands_on}
+
+MSP files can contain one or more mass spectra, these are split by an empty line as the line **90** in the example above. The individual spectra essentialy consist of two sections: metadata and peaks. 
+
+The metadata consists of compound name, retention time and index, base ion *m/z* and its intensity, and number of *m/z* peaks. In the example above this corresponds to the lines **1** to **11**. If the compound has not been identified as in our example spectrum, the *NAME* can be any arbitrary string. It is best however, if that string is unique within that `.msp` file. The *COMMENT* field stores some additional information about a spectrum; the number of mass spectrum peaks says how many *m/z* peaks is detected in that spectrum. The metadata fields are usually unordered, so it is quite common for one `.msp` file to contain **NAME** as the first metadata key, and for another `.msp` to have this key somewhere in the middle. The keys themselves also aren't rigid and can have different names (e.g., **compound_name** instead of **NAME**) or store information not present in this `.msp`, such as ionization mode.
+
+The section with *m/z* peaks is quite simple. It consists of two tab separated columns: first tells us the *m/z* value of a peak and the second the intensity of that peak.
 
 # Molecular Networking Workflow
 
