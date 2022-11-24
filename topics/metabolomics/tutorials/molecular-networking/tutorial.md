@@ -49,7 +49,7 @@ Some background on the data.
 > <hands-on-title> Data Upload </hands-on-title>
 >
 > 1. Create a new history for this tutorial
-> 2. Import the `.msp` file from [Zenodo]({{ page.zenodo_link }}):
+> 2. Import the `.msp` file from [Zenodo]({{ page.zenodo_link }}) either by downloading it to your PC and uploading to Galaxy or directly via url link:
 >
 >    ```
 >    # add url link to the dataset
@@ -67,10 +67,10 @@ Some background on the data.
 
 ## Explore the Data
 
-Our spectral data comes in MSP format, which is a text file with spectra in the **NIST Search** format.
-MSP is one of generally accepted formats for mass spectra representations and it is compatible with lots of spectra processing programms (MS-DIAL, NIST MS Search, AMDIS, etc.).
+This spectral data comes as MSP file, which is a text file structured according to the **NIST Search** spectra format.
+MSP is one of the generally accepted formats for mass spectra representations and it is compatible with lots of spectra processing programms (MS-DIAL, NIST MS Search, AMDIS, etc.).
 
-Because MSP files are text-based, they can be explored accordingly. You can use any text editor that you have on your computer or use Galaxy built-in editor. In this tutorial we will use the Galaxy editor to check the contents of the file:
+Because MSP files are text-based, they can be viewed as simple `txt` files. You can use any text editor that you have on your computer or use Galaxy built-in editor. In this tutorial we will use the Galaxy editor to check the contents of the file:
 > <hands-on-title> Data Exploration </hands-on-title>
 >
 > 1. Click *"Visualize this data"* {% icon galaxy-barchart %} icon next to the dataset in the Galaxy history
