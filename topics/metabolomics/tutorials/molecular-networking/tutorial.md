@@ -255,7 +255,7 @@ During the molecular networking workflow however, we want to compute similarity 
 
 ## Generate Molecular Network Graph
 
-Finally, after we have computed the similarity scores, it is time to generate a molecular network file, which can be used by graph visualization tools such as [Cytoscape](https://cytoscape.org/) or [MetGem](https://metgem.github.io/). This can be done by **matchMS networking** tool.
+Finally, after we have computed the similarity scores, it is time to generate a molecular network file that can be read by [Cytoscape](https://cytoscape.org/). This can be done by **matchMS networking** tool.
 
 > <hands-on-title> Task description </hands-on-title>
 >
@@ -267,7 +267,7 @@ Finally, after we have computed the similarity scores, it is time to generate a 
 >    > <comment-title> Output </comment-title>
 >    >
 >    > **matchMS networking** {% icon tool %} can generate network files in various formats. You can select a format which is accepted by a
-graph visualization tool of your liking. In this tutorial we will be using [Cytoscape](https://cytoscape.org/) and [MetGem](https://metgem.github.io/), which can import data in `graphml` format.
+graph visualization tool of your liking. In this tutorial we will be using [Cytoscape](https://cytoscape.org/), which can import data in `graphml` format.
 >    {: .comment}
 >
 {: .hands_on}
