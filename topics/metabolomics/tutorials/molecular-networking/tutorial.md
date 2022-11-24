@@ -1,7 +1,7 @@
 ---
 layout: tutorial_hands_on
 
-title: 'Mass Spectrometry: Untargeted Data Analysis with Molecular Networking'
+title: 'Mass Spectrometry: Untargeted Metabolomics with Molecular Networking'
 zenodo_link: ''
 questions:
 - How molecular networking can help in dereplicating unidentified
