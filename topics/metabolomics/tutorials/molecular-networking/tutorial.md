@@ -111,20 +111,29 @@ The section with *m/z* peaks is quite simple. It consists of two tab separated c
 
 # Molecular Networking Workflow
 
-It comes first a description of the step: some background and some theory.
-Some image can be added there to support the theory explanation:
+The foundation of molecular networking is pairwise spectral alignment. When the alignment is performed, each spectrum in a given dataset is compared against every other, and a network of spectral relations is obtained, from which molecular networks are created. Such networks can also be extended with spectra of identified compounds from other studies or related spectral libraries to ease dereplication of unannotated spectra in a so-called propagation manner ({% cite Aksenov2017 %}, {% cite Aron2020 %}).
 
-The idea is to keep the theory description before quite simple to focus more on the practical part.
+Molecular networking build on the fundamental observation that two structurally related molecules share fragment ion patterns when subjected to fragmentation methods such as colision induced dissociation or electron ionisation ({% cite Aron2020 %}). There are numerous scoring methods to compute similarities between a pair of spectra. Among them, the cosine similarity is the most widely used approach to match near-identical spectra with each other. Its adaptations, such as the modified cosine similarity, other approaches, such as neutral loss-based aligment can be used to discover non-identical but related spectra ({% cite Aron2020 %}, {% cite Bittremieux2022 %}).
 
-***TODO***: *Consider adding a detail box to expand the theory*
-
-> <details-title> More details about the theory </details-title>
+> <details-title> Overview of the spectral similarity scores </details-title>
 >
-> But to describe more details, it is possible to use the detail boxes which are expandable
+> **Cosine Greedy**
+> > foo
+> >
+>
+> **Cosine Hungarian**
+> > bar
+> >
+>
+> **Modified Cosine**
+> > foo
+> >
+>
+> **Neutral Losses Cosine**
+> > bar
+> >
 >
 {: .details}
-
-A big step can have several subsections or sub steps:
 
 
 ## Clean and Normalize the Data
@@ -226,26 +235,6 @@ Just pass the `json` output to this tool and it will convert the data to a tab-s
 >    {: .comment}
 >
 {: .hands_on}
-
-> <details-title> Overview of the spectral similarity scores </details-title>
->
-> **Cosine Greedy**
-> > foo
-> >
->
-> **Cosine Hungarian**
-> > bar
-> >
->
-> **Modified Cosine**
-> > foo
-> >
->
-> **Neutral Losses Cosine**
-> > bar
-> >
->
-{: .details}
 
 > <question-title></question-title>
 >
