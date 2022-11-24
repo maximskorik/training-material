@@ -25,7 +25,7 @@ contributors:
 
 # Introduction
 
-Add section about untargeted mass spec.
+The study of metabolites in biological samples is routinely defined as metabolomics and provides the capability to investigate metabolism on a global and relatively unbiased scale in comparison to traditional targeted studies focused on specific pathways of metabolism and a small number of metabolites. The untargeted approach enables to detect thousands of metabolites in hypothesis-generating studies and to link previously unknown mettabolites with biologically important roles. There are two major issues in contemporary metabolomics: the first is enormous loads of signal generated during the experiments, and the second is the fact that some metabolites in the studied samples may not be known to us. These obstacles make the task of processing and interpreting the metabolomics data a cumbersome and time-consuming process ({% cite Nash2019 %}).
 
 Molecular Networking is a powerful technique for visualizing chemical space of untargeted chromatography-mass spectrometry experiments. This method is based on plotting spectral data as networks of mass spectral nodes interconnected via edges that represent the similarity between corresponding pairs of spectra. Such an approach simplifies interpretation and discovery of the related molecules in your dataset even when some of them have not been matched to any known compound in the spectral libraries ({% cite Aksenov2017 %}).
 
